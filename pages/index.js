@@ -22,23 +22,25 @@ const explore = () => {
         <title>Periodically</title>
         <link rel="icon" href="/favicon192.png" />
       </Head>
-      <div className="relative w-screen h-screen text-primary-white bg-black">
+      <div className="relative w-screen h-screen text-primary-white bg-primary">
         <div className=" absolute w-full h-screen flex flex-col items-center justify-center">
-          <div className="text-4xl font-bold">
-            <h2 className="font-head text-primary-color sm:text-4xl md:text-6xl">
-              Periodically
+          <div>
+            <h2 className="font-head text-primary-color sm:text-4xl md:text-6xl ext-4xl font-bold text-center p-2 rounded-xl ">
+              🧬Periodically
             </h2>
-        
+        <p className="text-lg italic ">"The place where you can anything and everything about elements by which our world is made of."</p>
           </div>
-          <div className="mt-20 bg-primary-light shadow-md p-4 rounded-md " >
+          <div className="mt-8 bg-primary-light shadow-light-card p-4 rounded-md  md:max-w-6xl" >
             <div className="mt-2">
+              <h2 className="font-gara text-primary-color text-2xl" >Thought of the moment</h2>
               <p className="italic text-xl">"{data.content}"</p>
               <p className="text-right">~{data.author}</p>
             </div>
           </div>
-          <div className="mt-8">
-            <button className="bg-primary-color w-button h-button shadow-md shadow-white hover:scale-90 active:scale-190 rounded-md" onClick={explore}>explore  	&nbsp; 	&nbsp; <span className="text-right"> &gt; </span> </button>
+          <div className="mt-8 flex justify-around items-center bg-primary-color w-40 p-2 h-button  shadow-light-card hover:scale-90 active:scale-190 rounded-md cursor-pointer" onClick={explore}>
+            <button className="text-primary-white font-gara text-xl">Explore!</button>
           </div>
+
         </div>
       </div>
     </div>

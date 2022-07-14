@@ -7,18 +7,18 @@ const Header = () => {
   const router = useRouter();
   const [searchInput, setSearchInput] = useState("");
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-lg md:px-10">
+    <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10 ">
       {/* left div */}
       <div
         onClick={() => router.push("/periodictable")}
         className="relative my-auto flex h-10 cursor-pointer items-center"
       >
-        <h2 className="font-head text-primary-color text-xl sm:text-4xl md:text-4xl">
-          Periodically
+        <h2 className="font-head text-primary-color text-sm md:text-2xl  lg:text-4xl border-2 p-2 rounded-xl shadow-light-card ">
+         🧬Periodically
         </h2>
       </div>
       {/*  middle div - search*/}
-      <div className="hidden  md:flex items-center rounded-full py-2 text-sm text-primary-white placeholder-primary-white md:border-2 md:shadow-sm">
+      <div className="hidden md:hidden lg:flex items-center rounded-xl py-2 text-sm text-primary-white placeholder-primary-white lg:border-2 lg:shadow-light-card">
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -28,20 +28,18 @@ const Header = () => {
         />
         <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex" />
       </div>
-      <div className="md:hidden flex items-center md:justify-around justify-center bg-primary-color rounded-xl md:border-2 md:p-2 mr-4 ml-4">
-        <p className="hidden md:inline text-primary-white">Expore</p>
-        <p className="hidden md:inline"> &nbsp; &nbsp;</p>
+      <div className="lg:hidden flex items-center justify-around bg-primary-color rounded-xl border-2 p-2 shadow-light-card">
+        <button className="md:inline text-primary-white">Expore</button>
         <Explore className="h-6 cursor-pointer text-primary-white" />
       </div>
       {/* right div */}
-      <div className="flex items-center justify-end space-x-4 text-gray-500">
-        <div className="hidden md:flex items-center justify-around  bg-primary-color rounded-xl md:border-2 md:p-2  ml-4">
-          <p className=" md:inline text-primary-white">Expore</p> &nbsp; &nbsp;
+      <div className="flex items-center justify-end space-x-4 text-gray-500 ">
+        <div className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card">
+          <button className=" md:inline text-primary-white">Expore</button>
           <Explore className="h-6 cursor-pointer text-primary-white" />
         </div>
-        <div className="flex items-center rounded-xl md:border-2 md:p-2">
+        <div className="flex items-center rounded-xl border-2 p-2 shadow-light-card">
           <HistoryEdu className="h-6 cursor-pointer text-primary-white" />
-          &nbsp; &nbsp;
           <button className=" hidden md:inline text-primary-white">
             History
           </button>
@@ -50,9 +48,8 @@ const Header = () => {
           href={"https://github.com/HarshKumarraghav/periodically_servers"}
           target="_parent"
         >
-          <div className=" flex items-center rounded-xl md:border-2 md:p-2">
+          <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card">
             <GitHub className="h-6 cursor-pointer text-primary-white" />
-            &nbsp; &nbsp;
             <p className="hidden md:inline md:text-primary-white">Api docs</p>
           </div>
         </Link>
