@@ -11,10 +11,10 @@ const Header = () => {
       {/* left div */}
       <div
         onClick={() => router.push("/periodictable")}
-        className="relative my-auto flex h-10 cursor-pointer items-center"
+        className="relative my-auto flex h-10 cursor-pointer sm:items-center sm:justify-start items-center"
       >
-        <h2 className="font-head text-primary-color text-sm md:text-2xl  lg:text-4xl border-2 p-2 rounded-xl shadow-light-card ">
-         🧬Periodically
+        <h2 className="font-head text-primary-color text-md md:text-2xl lg:text-4xl border-2 p-2 rounded-xl shadow-light-card">
+        <span className="hidden md:inline">🧬</span>Periodically
         </h2>
       </div>
       {/*  middle div - search*/}
