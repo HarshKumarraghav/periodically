@@ -8,7 +8,7 @@ const periodictable = () => {
         <Headers />
       </div>
 
-      <div className="max-w-[1440px] m-auto overflow-x-auto">
+      <div className="max-w-[1440px] m-auto overflow-x-auto overflow-y-auto">
         <div className="grid place-items-center overflow-auto relative">
           <Elements />
         </div>
