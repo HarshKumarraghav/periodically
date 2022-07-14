@@ -28,7 +28,7 @@ const explore = () => {
             <h2 className="font-head text-primary-color sm:text-4xl md:text-6xl ext-4xl font-bold text-center p-2 rounded-xl ">
               🧬Periodically
             </h2>
-        <p className="text-lg italic ">"The place where you can anything and everything about elements by which our world is made of."</p>
+        <p className="text-lg italic text-center">"The place where you can anything and everything about elements by which our world is made of."</p>
           </div>
           <div className="mt-8 bg-primary-light shadow-light-card p-4 rounded-md  md:max-w-6xl" >
             <div className="mt-2">
