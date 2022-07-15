@@ -18,7 +18,8 @@ module.exports = {
         "primary-white": "#EEEEEE",
         "light-theme-gray": "#bfbfbf",
         "light-button-gray": "#bfbfbf",
-        "light-font": "#474747"
+        "light-font": "#474747",
+        "glass":"#ffffff26",
       },
       borderRadius: {
         card: "10px"
@@ -27,7 +28,8 @@ module.exports = {
         "light-card":
      "-12px -12px 12px 0 rgba(58, 58, 58, 0.3),12px 12px 12px 0 rgba(0,0,0,.2)",
         "light-button":
-          "6px 6px 8px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(0, 0, 0, .25)"
+          "6px 6px 8px 0 rgba(255, 255, 255, 0.3), -4px -4px 6px 0 rgba(0, 0, 0, .25)",
+          "glass": "0 0 1rem 0 rgba(0, 0, 0, .2)"
       },
       height: {
         card: "300px",
