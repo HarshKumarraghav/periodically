@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { SearchIcon, GlobeAltIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
-import { useRouter } from "next/router";
+import { useRouter } from "next/router"
+import { usePeriodicTable } from "../context/userContext";
 const Header = () => {
   const router = useRouter();
+  const [tableData] = usePeriodicTable();
+const [filterData, setFilterData] = useState("");
+useEffect(() => {
+  setFilterData(tableData)
+}, [tableData])
+
   const [searchInput, setSearchInput] = useState("");
+  const [active , setActive] = useState(false);
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10 ">
       {/* left div */}
@@ -22,6 +30,7 @@ const Header = () => {
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
+          onClick={() => setActive(true)}
           type="text"
           placeholder={"search your element..."}
           className=" flex-grow bg-transparent pl-5 outline-none text-primary-white"
@@ -54,37 +63,40 @@ const Header = () => {
           </div>
         </Link>
       </div>
-      {/* {searchInput && (
+      {active && (
       <div className="col-span-3 mx-auto flex flex-col">
-        <DateRangePicker
+        {/* <DateRangePicker
           ranges={[selectionRange]}
           minDate={new Date()}
           rangeColors={['#FD5B61']}
           onChange={handleSelect}
-        />
+        /> */}
         <div className="item-center mb-4 flex border-b">
           <h2 className="flex-grow text-2xl font-semibold">
             Number of Guests
           </h2>
-          <UserIcon className="h-5" />
+          {/* <UserIcon className="h-5" /> */}
           <input
-            value={noOfGuests}
-            onChange={(e) => setNoofGuest(e.target.value)}
+            // value={noOfGuests}
+            // onChange={(e) => setNoofGuest(e.target.value)}
             type="number"
             min={1}
             className="w-12 pl-2 text-red-400 outline-none"
           />
         </div>
         <div className="flex">
-          <button onClick={search} className="flex-grow text-red-400">
+          <button 
+          // onClick={search} 
+          className="flex-grow text-red-400">
             Search
           </button>
-          <button className="flex-grow text-gray-500" onClick={resetInput}>
+          <button className="flex-grow text-gray-500" 
+          onClick={() => setActive(false)}>
             Cancel
           </button>
         </div>
       </div>
-    )} */}
+    )}
     </header>
   );
 };

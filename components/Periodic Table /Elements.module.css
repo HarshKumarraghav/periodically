@@ -10,12 +10,18 @@
   background: red;
   box-shadow: -12px -12px 12px 0 rgba(58, 58, 58, 0.3),
     12px 12px 12px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 2px;
+  border-radius: 5px;
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+}
+.element:hover {
+  box-shadow: -12px -12px 12px 0 rgba(58, 58, 58, 0.3),
+    12px 12px 12px 0 rgba(0, 0, 0, 0.2);
+    transform: scale3d(1.1, 1.1, 1.1);
+   transition: all 250ms ease-in-out;
 }
 .number {
     font-family: 'Cormorant Garamond', serif;
@@ -42,4 +48,14 @@
   flex: 3 1;
   text-transform: capitalize;
   font-family: 'Cormorant Garamond', serif;
+}
+
+.ptlegend{
+  position: absolute;
+  top: 1%;
+  left: 250px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 12px;
+  color: #eeeeee;
 }

@@ -1,19 +1,19 @@
 import React from "react";
+import Footer from "../components/Footer";
 import Headers from "../components/Header";
 import Elements from "../components/Periodic Table /Elements";
 const periodictable = () => {
+  
   return (
-    <div>
-      <div className="static">
-        <Headers />
-      </div>
+    <>
 
-      <div className="max-w-[1440px] m-auto overflow-x-auto overflow-y-auto scroll">
-        <div className="grid place-items-center overflow-auto relative">
+        <Headers />
+
+        <div className="grid place-items-center overflow-auto  overflow-y-auto">
           <Elements />
         </div>
-      </div>
-    </div>
+        <Footer/>
+    </>
   );
 };
 
