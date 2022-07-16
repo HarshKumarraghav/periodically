@@ -40,7 +40,6 @@ useEffect(() => {
                 key={buttonData.id}
                 onClick={() => {
                     setActiveCategory(buttonData.name);
-                    setFilter(tableData.filter(element => element.category === buttonData.name));
                 }
                 }
                 style={{ color: buttonData.color }}

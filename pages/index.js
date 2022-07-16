@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React,{useState , useEffect} from "react";
 import { useRouter } from "next/router";
+import { Explore } from "@mui/icons-material";
 const Home = () => {
 
 const [data, setData] = useState([]);
@@ -28,7 +29,7 @@ const explore = () => {
             <h2 className="font-head text-primary-color sm:text-4xl md:text-6xl ext-4xl font-bold text-center p-2 rounded-xl ">
               🧬Periodically
             </h2>
-        <p className="text-lg italic text-center">"The place where you can anything and everything about elements by which our world is made of."</p>
+        <p className="text-lg italic text-center">"The place where you can learn anything and everything about elements by which our world is made of."</p>
           </div>
           <div className="mt-8 bg-primary-light shadow-light-card p-4 rounded-md  md:max-w-6xl" >
             <div className="mt-2">
@@ -37,10 +38,10 @@ const explore = () => {
               <p className="text-right">~{data.author}</p>
             </div>
           </div>
-          <div className="mt-8 flex justify-around items-center bg-primary-color w-40 p-2 h-button  shadow-light-card hover:scale-90 active:scale-190 rounded-md cursor-pointer" onClick={explore}>
-            <button className="text-primary-white font-gara text-xl">Explore!</button>
-          </div>
-
+          <div className="flex mt-4 w-36 items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card font-custom active:scale-90 hover:scale-95" onClick={explore}>
+          <button className=" md:inline text-primary-white">Expore</button>
+          <Explore className="h-6 cursor-pointer text-primary-white" />
+        </div>
         </div>
       </div>
     </div>
