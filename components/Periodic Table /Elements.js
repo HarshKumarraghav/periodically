@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Classes from "./Elements.module.css";
 import { usePeriodicTable } from "../../context/userContext";
-import ActiveCategory from "../../components/Periodic Table /FilterbyCategory";
-
+import FilterbyCategory from "../../components/Periodic Table /FilterbyCategory";
+import Link from "next/link";
 const Elements = () => {
-  const [tableData] = usePeriodicTable();
-  const [filter, setFilter] = useState([]);
+  const [tableData ,loading] = usePeriodicTable();
+  const [filterData, setFilterData] = useState([]);
   useEffect(() => {
-    setFilter(tableData);
+    setFilterData(tableData);
   }, [tableData]);
   // color Map
   const colorMap = {
@@ -22,16 +22,39 @@ const Elements = () => {
     actinide: "#FF8C32",
     metalloid: "#3EC70B",
   };
+// send data trought params
+
   return (
     <>
       <div className="w-full min-h-screen bg-primary text-primary-white p-4 ">
         <div className="w-full h-full flex items-center justify-center relative overflow-x-auto scroll whitespace-nowrap p-3 mt-16">
           <aside className={Classes.ptlegend}>
-            <ActiveCategory filter={filter} setFilter={setFilter} />
+            <FilterbyCategory setFilterData={setFilterData} />
           </aside>
-          <div className={Classes.periodictable}>
-            {filter.map((element) => (
-              <div
+          <div className={Classes.periodictable} style={{position: "relative"}}>
+            {tableData.map((element) => (
+            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.name}`}>
+                <div 
+                className={Classes.element}
+                key={element.number}
+                style={{
+                  gridRow: element.ypos,
+                  gridColumn: element.xpos,
+        
+              
+                }}
+              >
+                <div className={Classes.number}>{element.number}</div>
+                <div className={Classes.symbol}>{element.symbol}</div>
+                <div className={Classes.name}>{element.name}</div>
+              </div>
+            </Link>
+            ))}
+          </div>
+          <div className={Classes.periodictable} style={{position: "absolute" , top:12}}>
+            {filterData.map((element) => (
+            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.name}`}>
+                <div 
                 className={Classes.element}
                 key={element.number}
                 style={{
@@ -44,6 +67,7 @@ const Elements = () => {
                 <div className={Classes.symbol}>{element.symbol}</div>
                 <div className={Classes.name}>{element.name}</div>
               </div>
+            </Link>
             ))}
           </div>
         </div>
