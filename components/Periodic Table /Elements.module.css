@@ -7,15 +7,15 @@
 }
 
 .element {
-  background: red;
-  box-shadow: -12px -12px 12px 0 rgba(58, 58, 58, 0.3),
-    12px 12px 12px 0 rgba(0, 0, 0, 0.2);
+  background: #ffffff26;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
   border-radius: 5px;
   position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1;
 }
 .element:hover {
   box-shadow: -12px -12px 12px 0 rgba(58, 58, 58, 0.3),

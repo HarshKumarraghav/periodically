@@ -12,16 +12,16 @@ const buttonDataMap = [
     { id:9, name: "actinide", color: "#FF8C32" },
     { id:10, name: "metalloid", color: "#3EC70B" },
     ];
-const FilterbyCategory = ({filter, setFilter}) => {
+const FilterbyCategory = ({setFilterData}) => {
   const [tableData] = usePeriodicTable();
   const [activeCategory, setActiveCategory] = useState("");
 useEffect(() => {
-    setFilter(tableData);
+    setFilterData(tableData);
  if (activeCategory === "") {
-  setFilter(tableData);
+  setFilterData(tableData);
  }
     else {
-        setFilter(
+        setFilterData(
             tableData.filter((element) => element.category === activeCategory)
         );
         }
@@ -31,7 +31,7 @@ useEffect(() => {
 
   return (
     <>
-      <div className="w-full flex flex-wrap items-center justify-center gap-2 ">
+      <div className="w-full flex flex-wrap items-center justify-center gap-2 z-10">
       <div className={"w-full text-center p-1 rounded-md text-primary-color z-10 mb-1 text-2xl font-bold font-gara"}>Filter the Element</div>
         <button onClick={() => setActiveCategory("")} className="w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300 ">ALL ELEMENTS</button>
         {buttonDataMap.map((buttonData) => (
@@ -47,7 +47,6 @@ useEffect(() => {
                 {buttonData.name.toUpperCase()}
             </button>
         ))}
-
       </div>
     </>
   );

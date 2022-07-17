@@ -81,7 +81,7 @@ const Header = () => {
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           type="text"
-          placeholder={"search your element..."}
+          placeholder={"Search your element by name || symbol || number"}
           className=" flex-grow bg-transparent pl-5 outline-none text-primary-white"
         />
         <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />
@@ -158,7 +158,7 @@ const Header = () => {
                       .includes(searchInput.toLowerCase()) ||
                     value.symbol
                       .toLowerCase()
-                      .includes(searchInput.toLowerCase())
+                      .includes(searchInput.toLowerCase()) || value.number.toString().includes(searchInput)
                   );
                 }
               }).map((item) => (
