@@ -1,5 +1,6 @@
 module.exports = {
   images: {
-    domains: ["assets/" ],
+    domains: ["upload.wikimedia.org", "material-properties.org" , "assets/"],
   },
-};
+}
+

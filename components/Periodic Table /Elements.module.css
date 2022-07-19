@@ -59,3 +59,39 @@
   grid-gap: 12px;
   color: #eeeeee;
 }
+.elementDetail {
+  width: 150px;
+  height: 150px;
+  background: #ffffff26;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1;
+}
+.numberDetail {
+  font-family: 'Cormorant Garamond', serif;
+font-weight: 400;
+position: absolute;
+top: 7px;
+left: 7px;
+display: table;
+flex: 0 1;
+}
+.symbolDetail {
+padding-top: 7px;
+font-weight: 700;
+padding-top: 15px;
+font-family: 'Cormorant Garamond', serif;
+}
+
+.nameDetail {
+  padding-top: 7px;
+letter-spacing: 0.54px;
+text-transform: capitalize;
+font-family: 'Cormorant Garamond', serif;
+}

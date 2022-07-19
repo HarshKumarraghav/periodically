@@ -27,17 +27,17 @@ const Home = () => {
         <link rel="icon" href="/favicon192.png" />
       </Head>
       <div className="relative w-screen h-screen text-primary-white bg-primary">
-        <div className=" absolute w-full h-screen flex flex-col items-center justify-center">
+        <div className="w-full h-screen flex flex-col items-center justify-center">
           <div>
-            <h2 className="font-head text-primary-color sm:text-4xl md:text-6xl ext-4xl font-bold text-center p-2 rounded-xl ">
-              🧬Periodically
+            <h2 className="font-head text-primary-color md:text-6xl text-4xl font-bold text-center p-2 rounded-xl ">
+              Periodically
             </h2>
             <p className="text-lg italic text-center">
               "The place where you can learn anything and everything about
               elements by which our world is made of."
             </p>
           </div>
-          <div className="mt-8 min-w-96 bg-primary-light shadow-light-card p-4 rounded-md  md:max-w-6xl">
+          <div className="mt-8 min-w-96 bg-primary-light shadow-light-card p-4 rounded-md">
             {loading ?  (
               <ReactLoading
                 type={"bars"}
@@ -56,10 +56,10 @@ const Home = () => {
             )}
           </div>
           <div
-            className="flex mt-4 w-36 items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card font-custom active:scale-90 hover:scale-95"
+            className="flex mt-4 w-36 items-center justify-around  bg-primary-color rounded-xl border-2 p-2  ml-4 shadow-light-card font-custom active:scale-90 hover:scale-95"
             onClick={explore}
           >
-            <button className=" md:inline text-primary-white">Expore</button>
+            <button className="inline text-primary-white">Expore</button>
             <Explore className="h-6 cursor-pointer text-primary-white" />
           </div>
         </div>
