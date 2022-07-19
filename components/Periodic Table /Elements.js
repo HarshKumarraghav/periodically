@@ -33,7 +33,7 @@ const Elements = () => {
           </aside>
           <div className={Classes.periodictable} style={{position: "relative"}}>
             {tableData.map((element) => (
-            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.name}`}>
+            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.number}`}>
                 <div 
                 className={Classes.element}
                 key={element.number}
@@ -53,7 +53,7 @@ const Elements = () => {
           </div>
           <div className={Classes.periodictable} style={{position: "absolute" , top:12}}>
             {filterData.map((element) => (
-            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.name}`}>
+            <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.number}`}>
                 <div 
                 className={Classes.element}
                 key={element.number}

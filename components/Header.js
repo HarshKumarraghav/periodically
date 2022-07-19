@@ -68,7 +68,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10 ">
       {/* left div */}
       <div
-        onClick={() => router.push("/periodictable")}
+        onClick={() => router.push("/")}
         className="relative my-auto flex h-10 cursor-pointer sm:items-center sm:justify-start items-center"
       >
         <h2 className="font-head text-primary-color text-md md:text-2xl lg:text-4xl border-2 p-2 rounded-xl shadow-light-card">
@@ -165,6 +165,7 @@ const Header = () => {
                 <div
                   className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition"
                   key={item.number}
+                  onClick={() => router.push(`/elementdata/${item.number}`)}
                 >
                   <div className="w-20 h-full">
                     <div
