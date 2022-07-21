@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Classes from "./Elements.module.css";
+import Classes from "./AtomElement.module.css";
 import { usePeriodicTable } from "../../context/userContext";
 import FilterbyCategory from "../../components/Periodic Table /FilterbyCategory";
 import Link from "next/link";

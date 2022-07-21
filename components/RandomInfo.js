@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Classes from "./AtomElement.module.css";
+import Classes from "./Periodic Table /AtomElement.module.css";
 import {
   ArrowBack,
   Book,
@@ -10,11 +10,11 @@ import {
   Biotech,
   ArrowForward,
 } from "@mui/icons-material";
-import Wiki from "../../assets/wikipedia.png";
-import notAvail from "../../assets/notAvail.jpeg";
+import Wiki from "../assets/wikipedia.png";
+import notAvail from "../assets/notAvail.jpeg";
 import Link from "next/link";
-const PeriodicDetail = ({ elementDataDetail }) => {
-  const [elementData, setElementData] = useState([]);
+const RandomInfo = ({ elementData ,handleClick }) => {
+  const [elementDataDetail, setElementDataDetail] = useState([]);
   const router = useRouter();
   const colorMap = {
     "noble gas": "#3AB0FF",
@@ -29,76 +29,53 @@ const PeriodicDetail = ({ elementDataDetail }) => {
     metalloid: "#3EC70B",
   };
   useEffect(() => {
-    setElementData(elementDataDetail);
-  }, [elementDataDetail]);
+    setElementDataDetail(elementData);
+  }, [elementData]);
 
   return (
     <>
-      {elementData?.map((element) => (
+      {elementDataDetail.map((element) => (
         <div>
-          {/* nav seaction */}
-          <div className="w-full bg-primary h-16">
-            <div className="flex items-center justify-between">
-              <div onClick={() => router.push("/periodictable")}>
-                <ArrowBack className="ml-8 active:scale-90 hover:scale-95 transition text-primary-white  w-8 h-7 rounded-md shadow-light-card m-2" />
-              </div>
-              <div
-                className="w-44 p-1 border-2 text-primary-white font-bold rounded-md shadow-light-card text-center text-[10px] font-custom active:scale-90 hover:scale-95 transition"
-                style={{ backgroundColor: colorMap[element.category] }}
-              >
-                <span className="mr-3 border-spacing-2">{element.number}.</span>
-                {element.category.toUpperCase()}
-              </div>
-
-              <Link href={element.source} target="_blank">
-                <a target="_blank">
-                  <div className="m-2 mr-8 active:scale-90 hover:scale-95 transition">
-                    <Image src={Wiki} width={"32px"} height={"32px"} />
-                  </div>
-                </a>
-              </Link>
-            </div>
-          </div>
           {/* header seaction */}
           <div className="w-full bg-primary flex justify-center items-center">
             <div className=" md:w-3/4 mb-8 flex flex-col bg-primary-light p-4 rounded-xl mt-2">
               <div className="w-full relative flex flex-col items-center justify-center md:justify-start bg-primary">
-                <div className="md:flex items-center justify-between w-full bg-primary shadow-light-card h-10 hidden mt-4">
-                  {element.number === 1 ? (
-                    <div className="flex w-full h-full bg-primary-light  rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-center item-center p-2 text-sm text-gara , text-primary-white">
-                      No element exists
-                    </div>
-                  ) : (
-                    <div
-                      className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                      onClick={() =>
-                        router.push(`/elementdata/${element.number - 1}`)
-                      }
-                    >
-                      <ArrowBack className="text-[20px]" />
-                      <h1 className="text-[15px]">
-                        Atomic Number-{element.number - 1}
-                      </h1>
-                    </div>
-                  )}
-                  {element.number === 119 ? (
-                    <div className="flex w-full h-full bg-primary-light  rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-center item-center p-2 text-sm text-gara , text-primary-white">
-                      No element exists
-                    </div>
-                  ) : (
-                    <div
-                      className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                      onClick={() =>
-                        router.push(`/elementdata/${element.number + 1}`)
-                      }
-                    >
-                      <h1 className="text-[15px]">
-                        Atomic Number-{element.number + 1}
-                      </h1>
-                      <ArrowForward className="text-[20px]" />
-                    </div>
-                  )}
-                </div>
+              <div className="md:flex items-center justify-between w-full bg-primary shadow-light-card h-10 hidden mt-4">
+              {element.number === 1 ? (
+                        <div className="flex w-full h-full bg-primary-light  rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-center item-center p-2 text-sm text-gara , text-primary-white">
+                          No element exists
+                        </div>
+                      ) : (
+                        <div
+                          className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
+                          onClick={() =>
+                            router.push(`/elementdata/${element.number - 1}`)
+                          }
+                        >
+                          <ArrowBack className="text-[20px]" />
+                          <h1 className="text-[15px]">
+                            Atomic Number-{element.number - 1}
+                          </h1>
+                        </div>
+                      )}
+                      {element.number === 119 ? (
+                        <div className="flex w-full h-full bg-primary-light  rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-center item-center p-2 text-sm text-gara , text-primary-white">
+                          No element exists
+                        </div>
+                      ) : (
+                        <div
+                          className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
+                          onClick={() =>
+                            router.push(`/elementdata/${element.number + 1}`)
+                          }
+                        >
+                          <h1 className="text-[15px]">
+                            Atomic Number-{element.number + 1}
+                          </h1>
+                          <ArrowForward className="text-[20px]" />
+                        </div>
+                      )}
+          </div>
                 <div className="w-full flex mt-8 mr-4 ml-4 items-center md:items-start flex-col md:flex-row">
                   <div
                     className={`hover:scale-95 md:ml-4 md:mt-6 transition border-2 ${Classes.elementDetail}`}
@@ -506,4 +483,4 @@ const PeriodicDetail = ({ elementDataDetail }) => {
     </>
   );
 };
-export default PeriodicDetail;
+export default RandomInfo;
