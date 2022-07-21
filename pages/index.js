@@ -34,7 +34,7 @@ const Home = () => {
             </h2>
             <p className="text-lg italic">
               "The place where you can learn anything and everything about
-              elements by which our world is made of."
+              elements by which our universe is made of."
             </p>
           </div>
           <div className="mt-8 min-w-96 bg-primary-light shadow-light-card p-4 rounded-md">

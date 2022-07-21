@@ -17,7 +17,7 @@ const Footer = () => {
         </h2>
         <p className="text-md mt-2">
               "The place where you can learn anything and everything about
-              elements by which our world is made of."
+              elements by which our universe is made of."
             </p>
         </div>
         <div className="flex text-xs flex-col  text-primary-white">
