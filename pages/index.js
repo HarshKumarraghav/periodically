@@ -29,10 +29,10 @@ const Home = () => {
       <div className="relative w-screen h-screen text-primary-white bg-primary">
         <div className="w-full h-screen flex flex-col items-center justify-center">
           <div>
-            <h2 className="font-head text-primary-color md:text-6xl text-4xl font-bold text-center p-2 rounded-xl ">
+            <h2 className="font-head text-primary-color text-4xl font-bold text-center p-2 rounded-xl ">
               Periodically
             </h2>
-            <p className="text-lg italic text-center">
+            <p className="text-lg italic">
               "The place where you can learn anything and everything about
               elements by which our world is made of."
             </p>

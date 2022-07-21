@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SearchIcon, GlobeAltIcon } from "@heroicons/react/solid";
 import Link from "next/link";
-import Classes from "../components/Periodic Table /Elements.module.css";
+import Classes from "../components/Periodic Table /AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { usePeriodicTable } from "../context/userContext";
@@ -68,11 +68,11 @@ const Header = () => {
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10 ">
       {/* left div */}
       <div
-        onClick={() => router.push("/")}
+        onClick={() => router.push("/periodictable")}
         className="relative my-auto flex h-10 cursor-pointer sm:items-center sm:justify-start items-center"
       >
-        <h2 className="font-head text-primary-color text-md md:text-2xl lg:text-4xl border-2 p-2 rounded-xl shadow-light-card">
-          <span className="hidden md:inline">🧬</span>Periodically
+        <h2 className="font-head bg-primary-color text-primary-white text-md  border-2 p-2 rounded-xl shadow-light-card">
+         Periodically
         </h2>
       </div>
       {/*  middle div - search*/}
@@ -86,17 +86,17 @@ const Header = () => {
         />
         <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />
       </div>
-      <div className="lg:hidden flex items-center justify-around bg-primary-color rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
+      <div className="lg:hidden flex items-center justify-around bg-primary-color rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95" onClick={()=>router.push("/explore")}>
         <button className="md:inline text-primary-white">Expore</button>
         <Explore className="h-6 cursor-pointer text-primary-white" />
       </div>
       {/* right div */}
-      <div className="flex items-center justify-end space-x-4 text-gray-500 ">
-        <div className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95">
+      <div className="flex items-center justify-end space-x-4 text-gray-500 " >
+        <div className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95" onClick={()=>router.push("/explore")}>
           <button className=" md:inline text-primary-white">Expore</button>
           <Explore className="h-6 cursor-pointer text-primary-white" />
         </div>
-        <div className="flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
+        <div className="flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95"  onClick={()=>router.push("/history")}>
           <HistoryEdu className="h-6 cursor-pointer text-primary-white" />
           <button className=" hidden md:inline text-primary-white">
             History
@@ -104,16 +104,16 @@ const Header = () => {
         </div>
         <Link
           href={"https://github.com/HarshKumarraghav/periodically_servers"}
-          target="_blank"
         >
+          <a target="_blank">
           <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
             <GitHub className="h-6 cursor-pointer text-primary-white" />
-            <p className="hidden md:inline md:text-primary-white">Api docs</p>
-          </div>
+            <p className="hidden md:inline md:text-primary-white">Api-docs</p>
+          </div></a>
         </Link>
       </div>
       {active && (
-        <div className="hidden sticky col-span-3 mx-auto md:flex flex-col items-center h-[550px] ">
+        <div className="hidden sticky col-span-3 mx-auto md:flex flex-col items-center h-[550px]">
           <div className="item-center m-4 flex">
             <button
               onClick={() => setSortingData("number")}
@@ -165,7 +165,7 @@ const Header = () => {
                 <div
                   className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition"
                   key={item.number}
-                  onClick={() => router.push(`/elementdata/${item.number}`)}
+                  onClick={() => {router.push(`/elementdata/${item.number}`) , setActive(false) }}
                 >
                   <div className="w-20 h-full">
                     <div
