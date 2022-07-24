@@ -3,7 +3,7 @@
 <img src="https://img.shields.io/badge/Author-@HarshKumarraghav-critical" />
 </p>
 
-![Periodically](public/periodically_design.png)
+![Periodically](public/Periodically-poster.gif)
 
 
 ## ⚛️ Why a periodic table
@@ -15,7 +15,7 @@ technologies which became the family for the modern pupils are used.
 
 ## Periodically Demo
 
-![Periodically](public/periodically_demo.gif)
+![Periodically](public/periodically_demo.webm)
 
 ## 📌 Discription 
 
