@@ -1,4 +1,4 @@
-### [Periodically - The Periodic table](https://periodically-webapp.vercel.app/)
+### Periodically - The Periodic table [visit site](https://periodically-webapp.vercel.app/)
 <p align="center">
 <img src="https://img.shields.io/badge/Author-@HarshKumarraghav-critical" />
 </p>
