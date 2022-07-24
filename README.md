@@ -15,7 +15,7 @@ technologies which became the family for the modern pupils are used.
 
 ## Periodically Demo
 
-![Periodically](public/periodically_demo.gif)
+![Periodically](public/periodically-demo.gif)
 
 ## 📌 Discription 
 
