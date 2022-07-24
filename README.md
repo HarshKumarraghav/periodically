@@ -48,11 +48,11 @@ screen.
 
 ## 😎 The Stack used :
 1. **Node.js** : 
-![Periodically](public/nodeJs.webp)
+![Periodically](public/nodejs.png)
 As an asynchronous event-driven JavaScript runtime, Node.js is an extremely powerful JavaScript-based platform used to develop online chat applications, video streaming sites, single-page applications, and many other I/O-intensive web applications and web apps. 
 
 2. **ExpressJs** : 
-![Periodically](public/expresss.png)
+![Periodically](public/express.png)
 Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application.
 It's a layer built on the top of the Node js that helps manage servers and routes. 
 
