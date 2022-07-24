@@ -61,7 +61,7 @@ It's a layer built on the top of the Node js that helps manage servers and route
 MongoDB is a non-relational document database that provides support for JSON-like storage. The MongoDB database has a flexible data model that enables you to store unstructured data, and it provides full indexing support, and replication with rich and intuitive APIs. 
 
 4. **Nextjs/Reactjs** : 
-![Periodically](public/nextjs.png)
+![Periodically](public/next-react.jpeg)
 Next. js is a React framework that gives you building blocks to create web applications. By framework, we mean Next. js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
 ## 🛠️ Tech used
 
