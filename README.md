@@ -13,6 +13,9 @@ The chemistry falls into to number of the most important sciences and is one of 
 Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
 technologies which became the family for the modern pupils are used.
 
+## Periodically Demo
+
+![Periodically](public/periodically_demo.gif)
 
 ## 📌 Discription 
 
@@ -47,9 +50,7 @@ Alkali metals
 Elements of the selected category will be listed in the search results and are highlighted in the table on the main application
 screen.
 
-## Feature Demo
 
-![Periodically](public/periodically_demo.gif)
 
 ## 😎 The Stack used : MERN:
 ![Periodically](public/mern.png)
