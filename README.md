@@ -7,26 +7,27 @@
 
 
 ## ⚛️ Why a periodic table
-The chemistry falls into to number of the most important sciences and is one of the main school obiects.
-Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
-technologies which became the family for the modern pupils are used.
-
-**Periodically** - is a free web application which displays the entire Periodic Table at startup interface. The table has a long-
-form approved by the International Union of Pure and Applied Chemistry (IUPAC) as the core. Besides the Periodic Table of
-chemical elements, you can use the Table of solubility.
-
-## 📌 Discription 
 In **Periodically** web application you will find a huge amount of data about chemical elements for free. You will learn a lot of new and useful for yourself, no matter you are a schoolboy, student, engineer, housewife or a person of any other provisions that does not have a refresher to Chemistry.
 
 The chemistry falls into to number of the most important sciences and is one of the main school obiects.
 Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
 technologies which became the family for the modern pupils are used.
 
+
+## 📌 Discription 
+
 **Periodically** - is a free web application which displays the entire Periodic Table at startup interface. The table has a long-
 form approved by the International Union of Pure and Applied Chemistry (IUPAC) as the core. Besides the Periodic Table of
 chemical elements, you can use the Table of solubility.
 
-<!-- - When you click on any element provides information that is constantly updated.
+The chemistry falls into to number of the most important sciences and is one of the main school obiects.
+Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
+technologies which became the family for the modern pupils are used.
+
+
+## ✨ Features
+- Displays the entire Periodic Table at startup interface
+- When you click on any element provides information that is constantly updated.
 - For most of the items have an image.
 - For more information, there are direct links to Wikipedia for each item
 - Table solubility
@@ -43,13 +44,17 @@ Alkali metals
 • Metalloids
 • Actinides
 Elements of the selected category will be listed in the search results and are highlighted in the table on the main application
-screen. -->
-<!-- 
+screen.
+
+## 😎 The Stack used :
+1. **Node.js** : 
+![Periodically](public/nodeJs.webp)
+
 ## 🛠️ Tech used
 
 It is built using **React JS**, **JavaScript**, **Material UI**, and **Chart JS** with full responsive functionality. I have used _Context API_ to manage the state of our app and **Coin Gecko API** to fetch all the information regarding the currencies. I also used **Particle-js** to give it a unique UI design.
 
-# How to Contribute
+<!-- # How to Contribute
 
 ## Prerequisites
 
