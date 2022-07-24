@@ -1,6 +1,7 @@
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<div style="width:360px;max-width:100%;"><div style="height:0;padding-bottom:57.22%;position:relative;"><iframe width="360" height="206" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6nq63g"></iframe></div><p><a href="https://imgflip.com/gif/6nq63g">via Imgflip</a></p></div>
 
 ## Deploy your own
 
