@@ -1,6 +1,6 @@
 ### [Periodically - The Periodic table](https://periodically-webapp.vercel.app/)
 <p align="center">
-<img src="https://img.shields.io/badge/Author-HarshKumarraghav-criical" />
+<img src="https://img.shields.io/badge/Author-@HarshKumarraghav-criical" />
 </p>
 
 ![Periodically](public/periodically_design.png)
@@ -48,7 +48,8 @@ screen.
 
 ## 😎 The Stack used :
 1. **Node.js** : 
-![Periodically](public/nodeJs.webp =150x150)
+![Periodically](public/nodeJs.webp)
+As an asynchronous event-driven JavaScript runtime, Node.js is an extremely powerful JavaScript-based platform used to develop online chat applications, video streaming sites, single-page applications, and many other I/O-intensive web applications and web apps. 
 
 ## 🛠️ Tech used
 
