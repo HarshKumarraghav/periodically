@@ -48,7 +48,7 @@ screen.
 
 ## 😎 The Stack used :
 1. **Node.js** : 
-![Periodically](public/nodeJs.webp=150x150)
+![Periodically](public/nodeJs.webp =150x150)
 
 ## 🛠️ Tech used
 
