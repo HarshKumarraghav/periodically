@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import Head from "next/head";
 import PeriodicDetail from "../../components/Periodic Table /PeriodicDetail";
 export async function getServerSideProps(context) {
   const { elementdata } = context.query;
@@ -20,7 +21,6 @@ export async function getServerSideProps(context) {
   };
 }
 const elementdata = ({ elementDataDetail }) => {
-  console.log(elementDataDetail);
   return (
     <div>
       <Header />

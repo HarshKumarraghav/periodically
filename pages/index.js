@@ -24,7 +24,7 @@ const Home = () => {
     <div className="font-gara">
       <Head>
         <title>Periodically</title>
-        <link rel="icon" href="/favicon192.png" />
+        <link rel="icon" href="/periodically_favicon.png" />
       </Head>
       <div className="relative w-screen h-screen text-primary-white bg-primary">
         <div className="w-full h-screen flex flex-col items-center justify-center">
