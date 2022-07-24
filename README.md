@@ -117,7 +117,7 @@ You can access the data by using this link:
 ```
 ---
 
-## Development
+## 💻 Development
 ### Install Repository
 ```git
 git clone https://github.com/HarshKumarraghav/periodically_webapp
@@ -140,7 +140,7 @@ yarn run dev
 Your project is running on https://localhost:3000.
 ```
 
-## Upcoming Feature
+## 💡 Upcoming Feature
 
 - Authentication
 - Periodical Table - History 
