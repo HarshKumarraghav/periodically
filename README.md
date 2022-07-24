@@ -51,6 +51,15 @@ screen.
 ![Periodically](public/nodeJs.webp)
 As an asynchronous event-driven JavaScript runtime, Node.js is an extremely powerful JavaScript-based platform used to develop online chat applications, video streaming sites, single-page applications, and many other I/O-intensive web applications and web apps. 
 
+2. **ExpressJs** : 
+![Periodically](public/.express.png)
+Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application.
+It's a layer built on the top of the Node js that helps manage servers and routes. 
+
+3. **MongoDb** : 
+![Periodically](public/.mongodb.webp)
+MongoDB is a non-relational document database that provides support for JSON-like storage. The MongoDB database has a flexible data model that enables you to store unstructured data, and it provides full indexing support, and replication with rich and intuitive APIs. 
+
 ## 🛠️ Tech used
 
 It is built using **React JS**, **JavaScript**, **Material UI**, and **Chart JS** with full responsive functionality. I have used _Context API_ to manage the state of our app and **Coin Gecko API** to fetch all the information regarding the currencies. I also used **Particle-js** to give it a unique UI design.
