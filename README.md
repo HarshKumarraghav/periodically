@@ -47,6 +47,10 @@ Alkali metals
 Elements of the selected category will be listed in the search results and are highlighted in the table on the main application
 screen.
 
+## Feature Demo
+
+![Periodically](public/periodically_demo.gif)
+
 ## 😎 The Stack used : MERN:
 ![Periodically](public/mern.png)
 
