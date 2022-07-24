@@ -74,7 +74,7 @@ Next. js is a React framework that gives you building blocks to create web appli
 
 A simple NodeJS API for **Periodic Table Elements** returns in JSON format.
 You can access the data by using this link:
-![Periodically](https://periodically-servers.herokuapp.com/)
+[Periodically](https://periodically-servers.herokuapp.com/)
 
 
 ## Expect JSON Data Format
