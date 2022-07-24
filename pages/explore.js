@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ExploreData from "../components/ExploreData";
 import Header from "../components/Header";
+import Head from "next/head";
 import RandomInfo from "../components/RandomInfo";
 import { usePeriodicTable } from "../context/userContext";
 import Footer from "../components/Footer";
@@ -29,6 +30,10 @@ const explore = () => {
   }, []);
   return (
     <>
+          <Head>
+        <title>Periodically-explore</title>
+        <link rel="icon" href="/periodically_favicon.png" />
+      </Head>
       <Header />
       <ExploreData
         tableData={tableData}

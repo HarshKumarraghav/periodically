@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Head from "next/head";
 import Classes from "./AtomElement.module.css";
 import {
   ArrowBack,
@@ -36,6 +37,10 @@ const PeriodicDetail = ({ elementDataDetail }) => {
     <>
       {elementData?.map((element) => (
         <div>
+           <Head>
+        <title>{element.number}. || {element.name}</title>
+        <link rel="icon" href="/periodically_favicon.png" />
+      </Head>
           {/* nav seaction */}
           <div className="w-full bg-primary h-16">
             <div className="flex items-center justify-between">
