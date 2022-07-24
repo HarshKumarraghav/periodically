@@ -26,7 +26,8 @@ technologies which became the family for the modern pupils are used.
 
 
 ## ✨ Features
-- Displays the entire Periodic Table at startup interface
+- Displays the entire Periodic Table at startup interface.
+- Thought of the day.
 - When you click on any element provides information that is constantly updated.
 - For most of the items have an image.
 - For more information, there are direct links to Wikipedia for each item
@@ -48,29 +49,26 @@ screen.
 
 ## 😎 The Stack used : MERN:
 ![Periodically](public/mern.png)
-## 1. **Node.js** : 
 
-
+ 1. **Node.js** : 
 As an asynchronous event-driven JavaScript runtime, Node.js is an extremely powerful JavaScript-based platform used to develop online chat applications, video streaming sites, single-page applications, and many other I/O-intensive web applications and web apps. 
 
-## 2. **ExpressJs** : 
-
-
+ 2. **Express.js** : 
 Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application.
 It's a layer built on the top of the Node js that helps manage servers and routes. 
 
-## 3. **MongoDb** : 
-
-
+3. **MongoDb** : 
 MongoDB is a non-relational document database that provides support for JSON-like storage. The MongoDB database has a flexible data model that enables you to store unstructured data, and it provides full indexing support, and replication with rich and intuitive APIs. 
 
-## 4. **Nextjs/Reactjs** : 
-
-
+4. **Next.js/React.js** : 
 Next. js is a React framework that gives you building blocks to create web applications. By framework, we mean Next. js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
-## 🛠️ Tech used
 
-It is built using **React JS**, **JavaScript**, **Material UI**, and **Chart JS** with full responsive functionality. I have used _Context API_ to manage the state of our app and **Coin Gecko API** to fetch all the information regarding the currencies. I also used **Particle-js** to give it a unique UI design.
+5. **Additional tech** :  
+ Periodically is a fully responsive web appication build using MERN Stack (Next js) which use **Context api** for state manangement, **Tailwind css** for styling and **Material Icon** for icons.
+ 
+## 🛠️  Design Architecture
+
+![Periodically](public/design_arc.png)
 
 <!-- # How to Contribute
 
