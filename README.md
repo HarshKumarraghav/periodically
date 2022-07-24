@@ -60,6 +60,9 @@ It's a layer built on the top of the Node js that helps manage servers and route
 ![Periodically](public/mongodb.png)
 MongoDB is a non-relational document database that provides support for JSON-like storage. The MongoDB database has a flexible data model that enables you to store unstructured data, and it provides full indexing support, and replication with rich and intuitive APIs. 
 
+4. **Nextjs/Reactjs** : 
+![Periodically](public/nextjs.png)
+Next. js is a React framework that gives you building blocks to create web applications. By framework, we mean Next. js handles the tooling and configuration needed for React, and provides additional structure, features, and optimizations for your application.
 ## 🛠️ Tech used
 
 It is built using **React JS**, **JavaScript**, **Material UI**, and **Chart JS** with full responsive functionality. I have used _Context API_ to manage the state of our app and **Coin Gecko API** to fetch all the information regarding the currencies. I also used **Particle-js** to give it a unique UI design.
