@@ -17,6 +17,7 @@
     "next-share": "^0.16.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-loader-spinner": "^5.1.7-beta.1",
     "react-loading": "^2.0.3"
   },
   "devDependencies": {
