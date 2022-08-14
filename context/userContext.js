@@ -3,12 +3,16 @@ export const tableContext = createContext();
 
 export const TableProvider = ({ children }) => {
   const [tableData, setTableData] = useState([]);
+  const [loadingTable, setLoadingTable] = useState(true);
   const periodictableData = async () => {
     await fetch("https://periodically-servers.herokuapp.com/", {
       method: "GET",
     })
       .then((res) => res.json())
-      .then((data) => setTableData(data))
+      .then((data) => {
+        setTableData(data);
+        setLoadingTable(false);
+      })
       .catch((err) => console.log(err));
   };
 
@@ -16,7 +20,7 @@ export const TableProvider = ({ children }) => {
     periodictableData();
   }, []);
   return (
-    <tableContext.Provider value={[tableData, setTableData]}>
+    <tableContext.Provider value={[tableData, loadingTable, setTableData]}>
       {children}
     </tableContext.Provider>
   );

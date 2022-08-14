@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Rings } from "react-loader-spinner";
 const Elements = () => {
   const [tableData] = usePeriodicTable();
+  const [loadingTable] =usePeriodicTable();
   const [filterData, setFilterData] = useState([]);
   useEffect(() => {
     setFilterData(tableData);
@@ -27,7 +28,20 @@ const Elements = () => {
 
   return (
     <>
-      {tableData ? (
+      {loadingTable == false ? (
+        <div className="w-screen h-screen bg-primary flex items-center justify-center flex-col">
+          <Rings
+            height="300"
+            width="300"
+            radius="20"
+            color="#D82148"
+            ariaLabel="three-dots-loading"
+            wrapperStyle
+            wrapperClass
+          />
+          <p className="font-head text-2xl text-primary-color">Loading....</p>
+        </div>
+      ) : (
         <div className="w-full min-h-screen bg-primary text-primary-white p-4 ">
           <div className="w-full h-full flex items-center justify-center relative overflow-x-auto scroll whitespace-nowrap p-3 mt-16">
             <aside className={Classes.ptlegend}>
@@ -83,19 +97,6 @@ const Elements = () => {
               ))}
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="w-screen h-screen bg-primary flex items-center justify-center flex-col">
-          <Rings
-            height="300"
-            width="300"
-            radius="20"
-            color="#D82148"
-            ariaLabel="three-dots-loading"
-            wrapperStyle
-            wrapperClass
-          />
-          <p className="font-head text-2xl text-primary-color">Loading....</p>
         </div>
       )}
     </>
