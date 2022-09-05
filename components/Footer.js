@@ -57,7 +57,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link
-              href={"https://harshkumarraghav.github.io/My-portfolio/"}
+              href={"https://harshraghav.me"}
               target="_blank"
             >
               <a target="_blank">
@@ -76,7 +76,7 @@ const Footer = () => {
           <h2 className="text-sm">
             Front-end Developer intern at
             <Link
-              href={"https://harshkumarraghav.github.io/My-portfolio/"}
+              href={"http://botsfusionai.com"}
               target="_blank"
             >
               <a target="_blank">
