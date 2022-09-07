@@ -71,12 +71,15 @@ const Header = () => {
         onClick={() => router.push("/periodictable")}
         className="relative my-auto flex h-10 cursor-pointer sm:items-center sm:justify-start items-center"
       >
-        <h2 className="font-head bg-primary-color text-primary-white text-md  border-2 p-2 rounded-xl shadow-light-card">
-         Periodically
+        <h2 className="font-head md:w-40 text-center bg-primary-color text-primary-white text-md  border-2 p-2 rounded-xl shadow-light-card">
+          Periodically
         </h2>
       </div>
       {/*  middle div - search*/}
-      <div className="hidden md:hidden lg:flex items-center rounded-xl py-2 text-sm text-primary-white placeholder-primary-white lg:border-2 lg:shadow-light-card "  onClick={() => setActive(true)}>
+      <div
+        className="hidden md:hidden lg:flex items-center rounded-xl py-2 text-sm text-primary-white placeholder-primary-white lg:border-2 lg:shadow-light-card "
+        onClick={() => setActive(true)}
+      >
         <input
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -86,30 +89,38 @@ const Header = () => {
         />
         <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />
       </div>
-      <div className="lg:hidden flex items-center justify-around bg-primary-color rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95" onClick={()=>router.push("/explore")}>
+      <div
+        className="lg:hidden flex items-center md:w-40 justify-between bg-primary-color rounded-xl border-2 p-2  shadow-light-card active:scale-90 hover:scale-95"
+        onClick={() => router.push("/explore")}
+      >
         <button className="md:inline text-primary-white">Expore</button>
         <Explore className="h-6 cursor-pointer text-primary-white" />
       </div>
       {/* right div */}
-      <div className="flex items-center justify-end space-x-4 text-gray-500 " >
-        <div className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95" onClick={()=>router.push("/explore")}>
+      <div className="flex items-center justify-end space-x-4 text-gray-500 ">
+        <div
+          className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95"
+          onClick={() => router.push("/explore")}
+        >
           <button className=" md:inline text-primary-white">Expore</button>
           <Explore className="h-6 cursor-pointer text-primary-white" />
         </div>
-        <div className="flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95"  onClick={()=>router.push("/history")}>
+        <div
+          className="flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95"
+          onClick={() => router.push("/history")}
+        >
           <HistoryEdu className="h-6 cursor-pointer text-primary-white" />
           <button className=" hidden md:inline text-primary-white">
             History
           </button>
         </div>
-        <Link
-          href={"https://github.com/HarshKumarraghav/periodically_servers"}
-        >
+        <Link href={"https://github.com/HarshKumarraghav/periodically_servers"}>
           <a target="_blank">
-          <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
-            <GitHub className="h-6 cursor-pointer text-primary-white" />
-            <p className="hidden md:inline md:text-primary-white">Api-docs</p>
-          </div></a>
+            <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
+              <GitHub className="h-6 cursor-pointer text-primary-white" />
+              <p className="hidden md:inline md:text-primary-white">Api-docs</p>
+            </div>
+          </a>
         </Link>
       </div>
       {active && (
@@ -158,14 +169,19 @@ const Header = () => {
                       .includes(searchInput.toLowerCase()) ||
                     value.symbol
                       .toLowerCase()
-                      .includes(searchInput.toLowerCase()) || value.number.toString().includes(searchInput)
+                      .includes(searchInput.toLowerCase()) ||
+                    value.number.toString().includes(searchInput)
                   );
                 }
-              }).map((item) => (
+              })
+              .map((item) => (
                 <div
                   className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition"
                   key={item.number}
-                  onClick={() => {router.push(`/elementdata/${item.number}`) , setActive(false) }}
+                  onClick={() => {
+                    router.push(`/elementdata/${item.number}`),
+                      setActive(false);
+                  }}
                 >
                   <div className="w-20 h-full">
                     <div
