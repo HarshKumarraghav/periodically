@@ -37,7 +37,7 @@ const Home = () => {
               elements."
             </p>
           </div>
-          <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md">
+          <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md flex justify-center item-center">
             {loading ?  (
               <ReactLoading
                 type={"bars"}
