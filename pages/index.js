@@ -32,12 +32,12 @@ const Home = () => {
             <h2 className="font-head text-primary-color text-4xl font-bold text-center p-2 rounded-xl ">
               Periodically
             </h2>
-            <p className="text-lg italic">
+            <p className="text-lg italic text-center">
               "The place where you can learn anything and everything about
-              elements by which our universe is made of."
+              elements."
             </p>
           </div>
-          <div className="mt-8 min-w-96 bg-primary-light shadow-light-card p-4 rounded-md">
+          <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md">
             {loading ?  (
               <ReactLoading
                 type={"bars"}
@@ -56,10 +56,10 @@ const Home = () => {
             )}
           </div>
           <div
-            className="flex mt-4 w-36 items-center justify-around  bg-primary-color rounded-xl border-2 p-2  ml-4 shadow-light-card font-custom active:scale-90 hover:scale-95"
+            className="flex mt-4 w-36 items-center justify-between pr-4 pl-4  bg-primary-color rounded-xl border-2 p-2  ml-4 shadow-light-card font-custom active:scale-90 hover:scale-95"
             onClick={explore}
           >
-            <button className="inline text-primary-white">Expore</button>
+            <button className="inline text-primary-white">Enter</button>
             <Explore className="h-6 cursor-pointer text-primary-white" />
           </div>
         </div>
