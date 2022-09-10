@@ -1,17 +1,24 @@
-import React from 'react'
-import Header from '../components/Header'
-import Head from 'next/head'
+import React from "react";
+import Header from "../components/Header";
+import Image from "next/image";
+import Comingsoon from '../assets/comingsoon.png';
+import Head from "next/head";
 const history = () => {
   return (
- <>
-   <Head>
+    <>
+      <Head>
         <title>Periodically-History</title>
         <link rel="icon" href="/periodically_favicon.png" />
       </Head>
- <Header/>
-    <div className='w-screen h-screen flex justify-center items-center bg-primary text-6xl text-primary-color'>Coming soon.....</div>
- </>
-  )
-}
+     
+      <div className="w-screen h-screen bg-primary overflow-hidden">
+      <Header />
+        <div className="w-full  h-full  flex justify-center items-center">
+          <Image src={Comingsoon} objectFit="fill" />
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default history
+export default history;
