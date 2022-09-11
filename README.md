@@ -62,6 +62,14 @@ A simple NodeJS API for **Periodic Table Elements** returns in JSON format.
 You can access the data by using this link:
 [Periodically](https://periodically-servers.herokuapp.com/)
 
+## 💡 Upcoming Feature
+
+- Authentication
+- Periodical Table - History 
+- Subcription based data 
+- payment system (stripe or paytm)
+- Newsletter
+- Contact us page
 
 ## Expected JSON Data Format
 
@@ -126,11 +134,4 @@ yarn run dev
 Your project is running on https://localhost:3000.
 ```
 
-## 💡 Upcoming Feature
 
-- Authentication
-- Periodical Table - History 
-- Subcription based data 
-- payment system (stripe or paytm)
-- Newsletter
-- Contact us page
