@@ -1,4 +1,4 @@
-### [Periodically - The Periodic table](https://periodically-webapp.vercel.app/)
+### [Periodically - The Periodic table](https://periodically.tech)
 When I was in school I used to complain about why we study chemistry, and what is the need for it, I will study computer science in the future. So one day during my summer vacation, I decided let's combine chemistry and computer science. So I created a project called **periodically**.
 <p align="center">
 <img src="https://img.shields.io/badge/Author-@HarshKumarraghav-critical" />
