@@ -61,7 +61,7 @@ technologies which became the family for the modern pupils are used.
 
 A simple Golang API for **Periodic Table Elements** returns in JSON format.
 You can access the data by using this link:
-[Periodically](https://periodically-golang-server.herokuapp.com/)
+[Periodically](https://periodically-golang-server.herokuapp.com)
 
 ## 💡 Upcoming Feature
 
