@@ -8,14 +8,14 @@ import Footer from "../components/Footer";
 const explore = () => {
   const [data, setData] = useState([]);
   const dataFetch = async () => {
-    const response = await fetch("https://periodically-servers.herokuapp.com/random")
-    const arr =[];
-    const Data = await response.json();    
+    const response = await fetch(
+      "https://periodically-golang-server.herokuapp.com/random"
+    );
+    const arr = [];
+    const Data = await response.json();
     arr.push(Data);
-    setData(arr); 
-    };
-    
-    console.log("data", data);
+    setData(arr);
+  };
   useEffect(() => {
     dataFetch();
   }, []);
@@ -23,14 +23,14 @@ const explore = () => {
     e.preventDefault();
     dataFetch();
   };
-  const [tableData] = usePeriodicTable();
+  const [tableData, randomData] = usePeriodicTable();
   const [filterData, setFilterData] = useState([]);
   useEffect(() => {
     setFilterData(tableData);
   }, []);
   return (
     <>
-          <Head>
+      <Head>
         <title>Periodically-explore</title>
         <link rel="icon" href="/periodically_favicon.png" />
       </Head>
