@@ -114,7 +114,11 @@ const Header = () => {
             History
           </button>
         </div>
-        <Link href={"https://github.com/HarshKumarraghav/periodically_servers"}>
+        <Link
+          href={
+            "https://github.com/HarshKumarraghav/periodically_golang_server"
+          }
+        >
           <a target="_blank">
             <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
               <GitHub className="h-6 cursor-pointer text-primary-white" />
