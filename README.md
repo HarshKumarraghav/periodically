@@ -10,36 +10,36 @@ When I was in school I used to complain about why we study chemistry, and what i
 
 ## ⚛️ Why a periodic table
 
-In **Periodically** web application you will find a huge amount of data about chemical elements for free. You will learn a lot of new and useful for yourself, no matter you are a schoolboy, student, engineer, housewife or a person of any other provisions that does not have a refresher to Chemistry.
+In the **Periodically** web application you will find a huge amount of data about chemical elements for free. You will learn a lot of new and are useful for yourself, no matter if you are a schoolboy, student, engineer, housewife, or a person of any other provisions that do not have a refresher in Chemistry.
 
-The chemistry falls into to number of the most important sciences and is one of the main school obiects.
-Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
+The chemistry falls into to a number of the most important sciences and is one of the main school objects.
+Its studying begins with the Periodic Table. An interactive approach to a training material is more effective than a classical one. As in it
 technologies which became the family for the modern pupils are used.
 
 ## Periodically Demo
 
 ![Periodically](public/periodically-demo.gif)
 
-## 📌 Discription
+## 📌 Description
 
-**Periodically** - is a free web application which displays the entire Periodic Table at startup interface. The table has a long-
+**Periodically** - is a free web application that displays the entire Periodic Table at the startup interface. The table has a long-
 form approved by the International Union of Pure and Applied Chemistry (IUPAC) as the core. Besides the Periodic Table of
 chemical elements, you can use the Table of solubility.
 
-The chemistry falls into to number of the most important sciences and is one of the main school obiects.
-Its studying begins with the Periodic Table. Interactive approach to a training material is more effective than classical. As in it
+The chemistry falls into to a number of the most important sciences and is one of the main school objects.
+Its studying begins with the Periodic Table. An interactive approach to a training material is more effective than a classical one. As in it
 technologies which became the family for the modern pupils are used.
 
 ## ✨ Features
 
-- Displays the entire Periodic Table at startup interface.
+- Displays the entire Periodic Table at the startup interface.
 - Thought of the day.
 - When you click on any element provides information that is constantly updated.
 - For most of the items have an image.
 - For more information, there are direct links to Wikipedia for each item
 - Table solubility
 - To find any element you can use the search. The search engine is not choosy to the registry or writing style search.
-- You can sort the items in 10 categories:
+- You can sort the items into 10 categories:
   • Alkaline earth metals
   • Other nonmetals
   Alkali metals
@@ -67,17 +67,17 @@ You can access the data by using this link:
 
 - Authentication
 - Periodical Table - History
-- Subcription based data
-- payment system (stripe or paytm)
+- Subscription-based data
+- payment system (stripe or Paytm)
 - Newsletter
 - Contact us page
 
 ## Expected JSON Data Format
 
-```json
+```JSON
 {
   "name": "Hydrogen",
-  "appearance": "colorless gas",
+  "Appearance": "colorless gas",
   "atomic_mass": 1.008,
   "boil": 20.271,
   "category": "diatomic nonmetal",
@@ -88,7 +88,7 @@ You can access the data by using this link:
   "molar_heat": 28.836,
   "named_by": "Antoine Lavoisier",
   "number": 1,
-  "period": 1,
+  "Period": 1,
   "phase": "Gas",
   "source": "https://en.wikipedia.org/wiki/Hydrogen",
   "spectral_img": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hydrogen_Spectra.jpg",
@@ -102,7 +102,7 @@ You can access the data by using this link:
   "electron_affinity": 72.769,
   "electronegativity_pauling": 2.2,
   "ionization_energies": [1312],
-  "cpk-hex": "ffffff"
+  "CPC-hex": "ffffff"
 }
 ```
 
@@ -118,7 +118,7 @@ git clone https://github.com/HarshKumarraghav/periodically_webapp
 
 ### Run Project
 
-Install node modules and run project.
+Install node modules and run the project.
 
 ```
 npm install
