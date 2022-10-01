@@ -1,4 +1,4 @@
-name: Issue - Search bar 
+name: Issue - Issue Template
 description: Report a software bug on /learn, /news, Community Forum, Code Radio, or any of the platforms.
 labels: ['type: bug', 'status: waiting triage']
 body:
@@ -21,13 +21,9 @@ body:
     attributes:
       label: System
       description: Please complete the following information.
-      value: |
-        - Device: [e.g. iPhone 6, Laptop]
-        - OS: [e.g. iOS 14, Windows 10, Ubuntu 20.04]
-        - Browser: [e.g. Chrome, Safari]
-        - Version: [e.g. 22]
+      value: 
     validations:
-      required: true
+      required: false
   - type: textarea
     attributes:
       label: Additional context
