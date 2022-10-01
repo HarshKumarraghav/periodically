@@ -77,7 +77,7 @@ You can access the data by using this link:
 ```JSON
 {
   "name": "Hydrogen",
-  "Appearance": "colorless gas",
+  "appearance": "colorless gas",
   "atomic_mass": 1.008,
   "boil": 20.271,
   "category": "diatomic nonmetal",
@@ -88,7 +88,7 @@ You can access the data by using this link:
   "molar_heat": 28.836,
   "named_by": "Antoine Lavoisier",
   "number": 1,
-  "Period": 1,
+  "period": 1,
   "phase": "Gas",
   "source": "https://en.wikipedia.org/wiki/Hydrogen",
   "spectral_img": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Hydrogen_Spectra.jpg",
@@ -102,7 +102,7 @@ You can access the data by using this link:
   "electron_affinity": 72.769,
   "electronegativity_pauling": 2.2,
   "ionization_energies": [1312],
-  "CPC-hex": "ffffff"
+  "cpk-hex": "ffffff"
 }
 ```
 
