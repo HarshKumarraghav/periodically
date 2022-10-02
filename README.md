@@ -1,6 +1,6 @@
 ### [Periodically - The Periodic table](https://periodically.tech)
 
-When I was in school I used to complain about why we study chemistry, and what is the need for it, I will study computer science in the future. So one day during my summer vacation, I decided let's combine chemistry and computer science. So I created a project called **periodically**.
+We all remember the times when we used to struggle to remember the names, properties, groups, etc. of periodic elements. Those sweet-saur nostalgic school memories of memorizing the whole periodic table for our upcoming Unit test used to be a nightmare for many of us! The periodic table is the heart of chemistry and to make its learning more fun and engaging, the idea to build **"Periodically-The Periodic Table"** was born.
 
 <p align="center">
 <img src="https://img.shields.io/badge/Author-@HarshKumarraghav-critical" />
