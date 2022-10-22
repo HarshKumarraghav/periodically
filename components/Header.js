@@ -93,7 +93,7 @@ const Header = () => {
         className="lg:hidden flex items-center md:w-40 justify-between bg-primary-color rounded-xl border-2 p-2  shadow-light-card active:scale-90 hover:scale-95"
         onClick={() => router.push("/explore")}
       >
-        <button className="md:inline text-primary-white">Expore</button>
+        <button className="md:inline text-primary-white">Explore</button>
         <Explore className="h-6 cursor-pointer text-primary-white" />
       </div>
       {/* right div */}
@@ -102,7 +102,7 @@ const Header = () => {
           className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95"
           onClick={() => router.push("/explore")}
         >
-          <button className=" md:inline text-primary-white">Expore</button>
+          <button className=" md:inline text-primary-white">Explore</button>
           <Explore className="h-6 cursor-pointer text-primary-white" />
         </div>
         <div
