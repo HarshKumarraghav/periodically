@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SearchIcon, GlobeAltIcon } from "@heroicons/react/solid";
 import Link from "next/link";
-import Classes from "../components/Periodic Table /AtomElement.module.css";
+import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { usePeriodicTable } from "../context/userContext";
