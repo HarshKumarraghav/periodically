@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Classes from "../components/Periodic Table /AtomElement.module.css";
+import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { ArrowBack, GitHub } from "@mui/icons-material";
 import { useRouter } from "next/router";
-const ExploreData = ({ filterData, tableData, setFilterData, handleClick}) => {
+const ExploreData = ({ filterData, tableData, setFilterData, handleClick }) => {
   const router = useRouter();
   const [sortingData, setSortingData] = useState("number");
   const colorMap = {
@@ -218,16 +218,18 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick}) => {
         </div>
         <div className="flex items-center justify-between flex-col mt-8">
           <div onClick={() => router.push("/periodictable")}>
-            <h1 className="text-primary-color text-xl md:text-md text-gara font-bold">Explore the random Element:</h1>
+            <h1 className="text-primary-color text-xl md:text-md text-gara font-bold">
+              Explore the random Element:
+            </h1>
           </div>
 
-              <div onClick={handleClick} >
-                <button className="mr-8 active:scale-90 hover:scale-95 text-primary-white bg-primary-color transition w-44 h-12 rounded-md shadow-light-card m-2" >Spin Element!</button>
-              </div>
-            
+          <div onClick={handleClick}>
+            <button className="mr-8 active:scale-90 hover:scale-95 text-primary-white bg-primary-color transition w-44 h-12 rounded-md shadow-light-card m-2">
+              Spin Element!
+            </button>
+          </div>
         </div>
       </div>
-     
     </div>
   );
 };
