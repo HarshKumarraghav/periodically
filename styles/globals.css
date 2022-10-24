@@ -3,4 +3,20 @@
 @tailwind components;
 @tailwind utilities;
 
+.timeline_item:nth-child(odd) .timeline_item_content
+{
+    align-items: flex-start;
+    text-align: left;
 
+}
+
+.timeline_item:nth-child(odd) .timeline_item_content::after{
+    right: auto;
+    left: -0.5rem;
+
+}
+
+.timeline_item:nth-child(odd) .timeline_item_content .circle{
+    right: auto;
+    left: -2.5rem;
+}
