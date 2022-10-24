@@ -4,7 +4,7 @@ import Image from "next/image";
 import Comingsoon from '../assets/comingsoon.png';
 import Head from "next/head";
 import Timeline from "../components/Timeline";
-import styles from '../styles/timeline.module.css';
+// import styles from '../styles/timeline.module.css';
 import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 
 const history = () => {
