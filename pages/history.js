@@ -18,7 +18,7 @@ const history = () => {
       <div className="bg-primary">
         <Header />
         <div className="bg-primary">
-          <h1 className="text-4xl text-white text-center mt-6">History of Periodic Table <HistoryEduIcon className="text-4xl"/> </h1>
+          <h1 className="md:text-4xl text-white text-center mt-6 text-xl">History of Periodic Table <HistoryEduIcon className="text-xl md:text-4xl"/> </h1>
           <Timeline />
         </div>
       </div>
