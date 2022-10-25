@@ -3,7 +3,7 @@ import Link from 'next/link';
 // import styles from '../styles/timeline.module.css';
 
 const TimelineItem = ({data}) => {
-    console.log(data);
+    // console.log(data);
   return (
     <div className="flex justify-end pr-8 my-4 w-6/12 text-black odd:self-end odd:justify-start odd:pr-0 odd:pl-8 timeline_item">
         <div className="rounded-md bg-white w-8/12 flex flex-col items-end p-4 text-right relative after:content-[''] after:bg-white after:w-4 after:h-4 after:rotate-45 after:absolute after:-right-2 after:top-2/4 timeline_item_content">

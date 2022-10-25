@@ -20,3 +20,8 @@
     right: auto;
     left: -2.5rem;
 }
+
+.timeline::after
+{
+    height: 140%;
+}
