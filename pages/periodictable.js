@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Headers from "../components/Header";
 import Head from "next/head";
-import Elements from "../components/Periodic Table /Elements";
+import Elements from "../components/Periodic_Table/Elements";
 const periodictable = () => {
   return (
     <>

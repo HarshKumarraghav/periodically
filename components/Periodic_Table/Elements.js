@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Classes from "./AtomElement.module.css";
 import { usePeriodicTable } from "../../context/userContext";
-import FilterbyCategory from "../../components/Periodic Table /FilterbyCategory";
+import FilterbyCategory from "../../components/Periodic_Table/FilterbyCategory";
 import Link from "next/link";
 import { Rings } from "react-loader-spinner";
 const Elements = () => {
   const [tableData] = usePeriodicTable();
-  const [loadingTable] =usePeriodicTable();
+  const [loadingTable] = usePeriodicTable();
   const [filterData, setFilterData] = useState([]);
   useEffect(() => {
     setFilterData(tableData);
