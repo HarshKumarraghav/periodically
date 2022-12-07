@@ -5,7 +5,7 @@ export const TableProvider = ({ children }) => {
   const [tableData, setTableData] = useState([]);
   const [loadingTable, setLoadingTable] = useState(true);
   const periodictableData = async () => {
-    await fetch("https://periodically-golang-server.herokuapp.com/", {
+    await fetch("https://periodicallygolangserver-production.up.railway.app/", {
       method: "GET",
     })
       .then((res) => res.json())

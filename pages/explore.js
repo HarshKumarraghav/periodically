@@ -9,7 +9,7 @@ const explore = () => {
   const [data, setData] = useState([]);
   const dataFetch = async () => {
     const response = await fetch(
-      "https://periodically-golang-server.herokuapp.com/random"
+      "https://periodicallygolangserver-production.up.railway.app/random"
     );
     const arr = [];
     const Data = await response.json();
