@@ -6,7 +6,7 @@ import PeriodicDetail from "../../components/Periodic_Table/PeriodicDetail";
 export async function getServerSideProps(context) {
   const { elementdata } = context.query;
   const response = await fetch(
-    `https://periodically-servers.herokuapp.com/number/${elementdata}`,
+    `https://periodicallygolangserver-production.up.railway.app/number/${elementdata}`,
     {
       method: "GET",
     }
