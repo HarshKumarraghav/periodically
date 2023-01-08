@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SearchIcon, GlobeAltIcon } from "@heroicons/react/solid";
+import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
@@ -63,9 +63,17 @@ const Header = () => {
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
-
+  const handleClose = (e) => {
+    if (e.target.id === "handle") {
+      setActive(false);
+    }
+  };
   return (
-    <header className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10 ">
+    <header
+      className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10"
+      id="handle"
+      onClick={handleClose}
+    >
       {/* left div */}
       <div
         onClick={() => router.push("/periodictable")}
@@ -128,7 +136,7 @@ const Header = () => {
         </Link>
       </div>
       {active && (
-        <div className="hidden sticky col-span-3 mx-auto md:flex flex-col items-center h-[550px]">
+        <div className="hidden sticky col-span-3  mx-auto md:flex flex-col items-center h-[550px]">
           <div className="item-center m-4 flex">
             <button
               onClick={() => setSortingData("number")}
@@ -161,7 +169,7 @@ const Header = () => {
               Symbol
             </button>
           </div>
-          <div className="col-span-3 overflow-x-scroll">
+          <div className="col-span-3 overflow-x-scroll scrollbar-hide">
             {filterData
               .filter((value) => {
                 if (searchInput === "") {
@@ -180,7 +188,7 @@ const Header = () => {
               })
               .map((item) => (
                 <div
-                  className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition"
+                  className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition "
                   key={item.number}
                   onClick={() => {
                     router.push(`/elementdata/${item.number}`),
@@ -231,20 +239,6 @@ const Header = () => {
                   </div>
                 </div>
               ))}
-          </div>
-          <div className="flex mt-4 ">
-            <button
-              // onClick={search}
-              className="mr-6 w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] bg-primary-color font-custom active:scale-90 hover:scale-95 transition text-gray-300 "
-            >
-              Search
-            </button>
-            <button
-              className="w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300 "
-              onClick={() => setActive(false)}
-            >
-              Cancel
-            </button>
           </div>
         </div>
       )}

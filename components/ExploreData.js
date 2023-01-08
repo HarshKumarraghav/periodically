@@ -162,7 +162,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }) => {
             Phase
           </button>
         </div>
-        <div className="overflow-y-scroll bg-gray-900 mb-4 h-[335px] md:h-full overflow-hidden">
+        <div className="overflow-y-scroll bg-gray-900 mb-4 h-[335px] md:h-full overflow-hidden scrollbar-hide">
           {filterData.map((item) => (
             <div
               className="flex md:w-[600px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition"
