@@ -6,7 +6,7 @@ import PeriodicDetail from "../../components/Periodic_Table/PeriodicDetail";
 export async function getServerSideProps(context) {
   const { elementdata } = context.query;
   const response = await fetch(
-    `https://periodicallyservers-production.up.railway.app/number/${elementdata}`,
+    `https://periodically-servers.onrender.com/number/${elementdata}`,
     {
       method: "GET",
     }

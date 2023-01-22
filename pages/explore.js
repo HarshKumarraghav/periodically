@@ -9,7 +9,7 @@ const explore = () => {
   const [data, setData] = useState([]);
   const dataFetch = async () => {
     const response = await fetch(
-      "https://periodicallyservers-production.up.railway.app/random"
+      "https://periodically-servers.onrender.com/random"
     );
     const arr = [];
     const Data = await response.json();
