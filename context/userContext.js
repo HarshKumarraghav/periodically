@@ -5,7 +5,7 @@ export const TableProvider = ({ children }) => {
   const [tableData, setTableData] = useState([]);
   const [loadingTable, setLoadingTable] = useState(true);
   const periodictableData = async () => {
-    await fetch("https://periodically-servers.onrender.com/", {
+    await fetch("https://periodically-go-servers.onrender.com/", {
       method: "GET",
     })
       .then((res) => res.json())

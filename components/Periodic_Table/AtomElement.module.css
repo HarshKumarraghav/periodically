@@ -8,7 +8,7 @@
 
 .element {
   background: #ffffff26;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   position: relative;
   text-align: center;
@@ -20,11 +20,11 @@
 .element:hover {
   box-shadow: -12px -12px 12px 0 rgba(58, 58, 58, 0.3),
     12px 12px 12px 0 rgba(0, 0, 0, 0.2);
-    transform: scale3d(1.1, 1.1, 1.1);
-   transition: all 250ms ease-in-out;
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: all 250ms ease-in-out;
 }
 .number {
-    font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 400;
   font-size: 14px;
   position: absolute;
@@ -39,7 +39,7 @@
   font-weight: 700;
   padding-top: 15px;
   flex: 6 1;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .name {
@@ -47,10 +47,10 @@
   letter-spacing: 0.54px;
   flex: 3 1;
   text-transform: capitalize;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
 }
 
-.ptlegend{
+.ptlegend {
   position: absolute;
   top: 1%;
   left: 250px;
@@ -63,7 +63,7 @@
   width: 150px;
   height: 150px;
   background: #ffffff26;
-  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   position: relative;
   text-align: center;
@@ -74,24 +74,24 @@
   z-index: 1;
 }
 .numberDetail {
-font-family: 'Cormorant Garamond', serif;
-font-weight: 400;
-position: absolute;
-top: 7px;
-left: 7px;
-display: table;
-flex: 0 1;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  display: table;
+  flex: 0 1;
 }
 .symbolDetail {
-padding-top: 7px;
-font-weight: 700;
-padding-top: 15px;
-font-family: 'Cormorant Garamond', serif;
+  padding-top: 7px;
+  font-weight: 700;
+  padding-top: 15px;
+  font-family: "Cormorant Garamond", serif;
 }
 
 .nameDetail {
   padding-top: 7px;
-letter-spacing: 0.54px;
-text-transform: capitalize;
-font-family: 'Cormorant Garamond', serif;
+  letter-spacing: 0.54px;
+  text-transform: capitalize;
+  font-family: "Cormorant Garamond", serif;
 }

@@ -14,9 +14,13 @@ import {
 import Wiki from "../../assets/wikipedia.png";
 import notAvail from "../../assets/notAvail.jpeg";
 import Link from "next/link";
+
 const PeriodicDetail = ({ elementDataDetail }) => {
   const [elementData, setElementData] = useState([]);
   const router = useRouter();
+  /* The above code is defining a JavaScript object called `colorMap` which maps different types of
+ chemical elements to specific colors. Each chemical element type is represented as a key in the
+ object, and its corresponding color is represented as the value associated with that key. */
   const colorMap = {
     "noble gas": "#3AB0FF",
     "polyatomic nonmetal": "#F00699",
@@ -29,19 +33,33 @@ const PeriodicDetail = ({ elementDataDetail }) => {
     actinide: "#FF8C32",
     metalloid: "#3EC70B",
   };
+  /* The above code is using the `useEffect` hook in React to update the state of `elementData` whenever
+`elementDataDetail` changes. It creates an empty array `Data`, pushes the value of
+`elementDataDetail` into it, and then sets the state of `elementData` to `Data`. */
   useEffect(() => {
-    setElementData(elementDataDetail);
+    const Data = [];
+    Data.push(elementDataDetail);
+    setElementData(Data);
   }, [elementDataDetail]);
 
   return (
     <>
-      {elementData?.map((element) => (
-        <div>
-           <Head>
-        <title>{element.number}. || {element.name}</title>
-        <link rel="icon" href="/periodically_favicon.png" />
-      </Head>
+      {elementData?.map((element, i) => (
+        <div key={i}>
+          <Head>
+            <title>
+              {element.number}. || {element.name}
+            </title>
+            <link rel="icon" href="/periodically_favicon.png" />
+          </Head>
           {/* nav seaction */}
+          {/* The above code is a JSX code snippet written in React. It is
+          rendering a header component with a background color of "primary",
+          containing an arrow back icon, a category label with the element
+          number, and a link to the element's source page. The category label's
+          background color is determined by a color map based on the element's
+          category. The component is also using React Router to navigate to the
+          periodic table page when the arrow back icon is clicked. */}
           <div className="w-full bg-primary h-16">
             <div className="flex items-center justify-between">
               <div onClick={() => router.push("/periodictable")}>

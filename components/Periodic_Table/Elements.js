@@ -29,7 +29,7 @@ const Elements = () => {
   return (
     <>
       {loadingTable == false ? (
-        <div className="w-screen h-screen bg-primary flex items-center justify-center flex-col">
+        <div className="w-screen h-screen bg-primary flex items-center justify-center flex-col ">
           <Rings
             height="300"
             width="300"
@@ -42,8 +42,8 @@ const Elements = () => {
           <p className="font-head text-2xl text-primary-color">Loading....</p>
         </div>
       ) : (
-        <div className="w-full min-h-screen bg-primary text-primary-white p-4 ">
-          <div className="w-full h-full flex items-center justify-center relative overflow-x-auto scroll whitespace-nowrap p-3 mt-16">
+        <div className="w-full min-h-screen bg-primary text-primary-white p-4">
+          <div className="w-full h-full flex items-center justify-center relative overflow-x-auto scroll whitespace-nowrap p-3 mt-8">
             <aside className={Classes.ptlegend}>
               <FilterbyCategory setFilterData={setFilterData} />
             </aside>
@@ -51,7 +51,7 @@ const Elements = () => {
               className={Classes.periodictable}
               style={{ position: "relative" }}
             >
-              {tableData.map((element) => (
+              {tableData?.map((element) => (
                 <Link
                   href="/elementdata/[elementdata]"
                   as={`/elementdata/${element.number}`}

@@ -5,6 +5,7 @@ import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { usePeriodicTable } from "../context/userContext";
+import { MyDebounce } from "../utils/Debounce";
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
@@ -26,6 +27,7 @@ const Header = () => {
     metalloid: "#3EC70B",
   };
   const [searchInput, setSearchInput] = useState("");
+
   const [active, setActive] = useState(false);
 
   // sorting  by name
@@ -68,6 +70,15 @@ const Header = () => {
       setActive(false);
     }
   };
+  const SetInputString = (value) => {
+    setSearchInput(value);
+  };
+  /* `const DebouncedSetInputString = MyDebounce(SetInputString, 3000);` is creating a debounced version
+of the `SetInputString` function using the `MyDebounce` utility function. This means that when
+`DebouncedSetInputString` is called, it will wait for 3000 milliseconds (3 seconds) before actually
+executing the `SetInputString` function. This is useful for handling user input in real-time without
+overwhelming the system with too many requests. */
+  const DebouncedSetInputString = MyDebounce(SetInputString, 300);
   return (
     <header
       className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10"
@@ -89,8 +100,9 @@ const Header = () => {
         onClick={() => setActive(true)}
       >
         <input
-          value={searchInput}
-          onChange={(e) => setSearchInput(e.target.value)}
+          onChange={(e) => {
+            DebouncedSetInputString(e.target.value);
+          }}
           type="text"
           placeholder={"Search your element by name || symbol || number"}
           className=" flex-grow bg-transparent pl-5 outline-none text-primary-white"
