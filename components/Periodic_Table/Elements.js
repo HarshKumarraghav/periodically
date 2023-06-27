@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Classes from "./AtomElement.module.css";
 import { usePeriodicTable } from "../../context/userContext";
 import FilterbyCategory from "../../components/Periodic_Table/FilterbyCategory";
 import Link from "next/link";
 import { Rings } from "react-loader-spinner";
+
 const Elements = () => {
   const [tableData] = usePeriodicTable();
   const [loadingTable] = usePeriodicTable();
   const [filterData, setFilterData] = useState([]);
+
   useEffect(() => {
     setFilterData(tableData);
   }, [tableData]);
-  // color Map
+
   const colorMap = {
     "noble gas": "#3AB0FF",
     "polyatomic nonmetal": "#F00699",
@@ -24,7 +27,6 @@ const Elements = () => {
     actinide: "#FF8C32",
     metalloid: "#3EC70B",
   };
-  // send data trought params
 
   return (
     <>
@@ -51,50 +53,62 @@ const Elements = () => {
               className={Classes.periodictable}
               style={{ position: "relative" }}
             >
-              {tableData?.map((element) => (
-                <Link
-                  href="/elementdata/[elementdata]"
-                  as={`/elementdata/${element.number}`}
-                >
-                  <div
-                    className={Classes.element}
+              <AnimatePresence>
+                {tableData?.map((element) => (
+                  <Link
+                    href="/elementdata/[elementdata]"
+                    as={`/elementdata/${element.number}`}
                     key={element.number}
-                    style={{
-                      gridRow: element.ypos,
-                      gridColumn: element.xpos,
-                    }}
                   >
-                    <div className={Classes.number}>{element.number}</div>
-                    <div className={Classes.symbol}>{element.symbol}</div>
-                    <div className={Classes.name}>{element.name}</div>
-                  </div>
-                </Link>
-              ))}
+                    <motion.div
+                      className={Classes.element}
+                      style={{
+                        gridRow: element.ypos,
+                        gridColumn: element.xpos,
+                      }}
+                      initial={{ opacity: 0, scale: 0 }} // Initial opacity and scale
+                      animate={{ opacity: 1, scale: 1 }} // Animation to full opacity and scale
+                      transition={{ duration: 0.5 }} // Animation duration
+                      exit={{ opacity: 0, scale: 0 }} // Exit animation
+                    >
+                      <div className={Classes.number}>{element.number}</div>
+                      <div className={Classes.symbol}>{element.symbol}</div>
+                      <div className={Classes.name}>{element.name}</div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </AnimatePresence>
             </div>
             <div
               className={Classes.periodictable}
               style={{ position: "absolute", top: 12 }}
             >
-              {filterData.map((element) => (
-                <Link
-                  href="/elementdata/[elementdata]"
-                  as={`/elementdata/${element.number}`}
-                >
-                  <div
-                    className={Classes.element}
+              <AnimatePresence>
+                {filterData.map((element) => (
+                  <Link
+                    href="/elementdata/[elementdata]"
+                    as={`/elementdata/${element.number}`}
                     key={element.number}
-                    style={{
-                      gridRow: element.ypos,
-                      gridColumn: element.xpos,
-                      backgroundColor: colorMap[element.category],
-                    }}
                   >
-                    <div className={Classes.number}>{element.number}</div>
-                    <div className={Classes.symbol}>{element.symbol}</div>
-                    <div className={Classes.name}>{element.name}</div>
-                  </div>
-                </Link>
-              ))}
+                    <motion.div
+                      className={Classes.element}
+                      style={{
+                        gridRow: element.ypos,
+                        gridColumn: element.xpos,
+                        backgroundColor: colorMap[element.category],
+                      }}
+                      initial={{ opacity: 0, scale: 0 }} // Initial opacity and scale
+                      animate={{ opacity: 1, scale: 1 }} // Animation to full opacity and scale
+                      transition={{ duration: 0.5 }} // Animation duration
+                      exit={{ opacity: 0, scale: 0 }} // Exit animation
+                    >
+                      <div className={Classes.number}>{element.number}</div>
+                      <div className={Classes.symbol}>{element.symbol}</div>
+                      <div className={Classes.name}>{element.name}</div>
+                    </motion.div>
+                  </Link>
+                ))}
+              </AnimatePresence>
             </div>
           </div>
         </div>

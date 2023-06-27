@@ -13,6 +13,7 @@
     "@mui/icons-material": "^5.8.4",
     "@mui/lab": "^5.0.0-alpha.90",
     "@mui/material": "^5.9.0",
+    "framer-motion": "^10.12.17",
     "next": "latest",
     "next-share": "^0.16.0",
     "react": "18.1.0",
