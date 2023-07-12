@@ -6,7 +6,7 @@ import ReactLoading from "react-loading";
 import Quote from "../interfaces/quote";
 
 const Home = () => {
-  const [data, setData] = useState<Quote[]>([]);
+  const [data, setData] = useState<Quote>();
   const [loading, setLoading] = useState(true);
   const randomQuote = async () => {
     await fetch("https://api.quotable.io/random", { method: "GET" })
@@ -15,7 +15,7 @@ const Home = () => {
       .catch((err) => console.log(err));
     setLoading(false);
   };
-  useEffect(() => {
+  useEffect(() => {    
     randomQuote();
   }, []);
   const router = useRouter();
@@ -44,8 +44,8 @@ const Home = () => {
             ) : (
               <div className="mt-2">
                 <h2 className="font-gara text-primary-color text-2xl">Thought of the moment</h2>
-                <p className="italic text-xl">"{data[0].content}"</p>
-                <p className="text-right">~{data[0].author}</p>
+                <p className="italic text-xl">"{data ? data.content : "Never interrupt your enemy when he is making a mistake."}"</p>
+                <p className="text-right">~{data ? data.author : "Napoleon"}</p>
               </div>
             )}
           </div>
