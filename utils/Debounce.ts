@@ -7,11 +7,13 @@
  * function should wait before executing after the last time it was called.
  * @returns The function `Debounce` is being returned.
  */
-export const MyDebounce = (fn, d) => {
-  let timer;
-  const Debounce = (...args) => {
+export const MyDebounce = <T extends (...args: any[]) => void>(fn: T, d: number) => {
+  let timer: NodeJS.Timeout;
+
+  const Debounce = (...args: Parameters<T>): void => {
     if (timer) clearInterval(timer);
     timer = setTimeout(() => fn(...args), d);
   };
+
   return Debounce;
 };
