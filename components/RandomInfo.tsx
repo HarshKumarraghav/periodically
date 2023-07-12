@@ -13,10 +13,21 @@ import {
 import Wiki from "../assets/wikipedia.png";
 import notAvail from "../assets/notAvail.jpeg";
 import Link from "next/link";
-const RandomInfo = ({ elementData, handleClick }) => {
-  const [elementDataDetail, setElementDataDetail] = useState([]);
+import Element from "../interfaces/element";
+
+interface Props{
+  elementData: Element[];
+  handleClick?: () => void;
+}
+
+interface ColorMap{
+  [key: string]: string;
+}
+
+const RandomInfo = ({ elementData, handleClick }: Props) => {
+  const [elementDataDetail, setElementDataDetail] = useState<Element[]>([]);
   const router = useRouter();
-  const colorMap = {
+  const colorMap: ColorMap = {
     "noble gas": "#3AB0FF",
     "polyatomic nonmetal": "#F00699",
     "alkaline earth metal": "#01708F",

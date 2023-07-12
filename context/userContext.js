@@ -19,11 +19,7 @@ export const TableProvider = ({ children }) => {
   useEffect(() => {
     periodictableData();
   }, []);
-  return (
-    <tableContext.Provider value={[tableData, loadingTable, setTableData]}>
-      {children}
-    </tableContext.Provider>
-  );
+  return <tableContext.Provider value={[tableData, loadingTable, setTableData]}>{children}</tableContext.Provider>;
 };
 export function usePeriodicTable() {
   return useContext(tableContext);

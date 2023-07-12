@@ -3,15 +3,17 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Explore } from "@mui/icons-material";
 import ReactLoading from "react-loading";
+import Quote from "../interfaces/quote";
+
 const Home = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Quote[]>([]);
   const [loading, setLoading] = useState(true);
   const randomQuote = async () => {
     await fetch("https://api.quotable.io/random", { method: "GET" })
       .then((res) => res.json())
-      .then((data) => setData(data),)
+      .then((data) => setData(data))
       .catch((err) => console.log(err));
-      setLoading(false)
+    setLoading(false);
   };
   useEffect(() => {
     randomQuote();
@@ -33,25 +35,17 @@ const Home = () => {
               Periodically
             </h2>
             <p className="text-lg italic text-center">
-              "The place where you can learn anything and everything about
-              elements."
+              "The place where you can learn anything and everything about elements."
             </p>
           </div>
           <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md flex justify-center item-center">
-            {loading ?  (
-              <ReactLoading
-                type={"bars"}
-                color={"D82148"}
-                height={35}
-                width={35}
-              />
-            )  : (
+            {loading ? (
+              <ReactLoading type={"bars"} color={"D82148"} height={35} width={35} />
+            ) : (
               <div className="mt-2">
-                <h2 className="font-gara text-primary-color text-2xl">
-                  Thought of the moment
-                </h2>
-                <p className="italic text-xl">"{data.content}"</p>
-                <p className="text-right">~{data.author}</p>
+                <h2 className="font-gara text-primary-color text-2xl">Thought of the moment</h2>
+                <p className="italic text-xl">"{data[0].content}"</p>
+                <p className="text-right">~{data[0].author}</p>
               </div>
             )}
           </div>

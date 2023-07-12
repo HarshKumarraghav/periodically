@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import ExploreData from "../components/ExploreData";
 import Header from "../components/Header";
 import Head from "next/head";
 import RandomInfo from "../components/RandomInfo";
 import { usePeriodicTable } from "../context/userContext";
 import Footer from "../components/Footer";
+import Element from "../interfaces/element";
+
+
 const explore = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Element[]>([]);
   const dataFetch = async () => {
-    const response = await fetch(
-      "https://periodically-go-servers.onrender.com/random"
-    );
+    const response = await fetch("https://periodically-go-servers.onrender.com/random");
     const arr = [];
     const Data = await response.json();
     arr.push(Data);
@@ -19,7 +20,7 @@ const explore = () => {
   useEffect(() => {
     dataFetch();
   }, []);
-  const handleClick = (e) => {
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     dataFetch();
   };
