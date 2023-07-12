@@ -15,7 +15,7 @@ const Home = () => {
       .catch((err) => console.log(err));
     setLoading(false);
   };
-  useEffect(() => {    
+  useEffect(() => {
     randomQuote();
   }, []);
   const router = useRouter();
@@ -44,7 +44,9 @@ const Home = () => {
             ) : (
               <div className="mt-2">
                 <h2 className="font-gara text-primary-color text-2xl">Thought of the moment</h2>
-                <p className="italic text-xl">"{data ? data.content : "Never interrupt your enemy when he is making a mistake."}"</p>
+                <p className="italic text-xl">
+                  "{data ? data.content : "Never interrupt your enemy when he is making a mistake."}"
+                </p>
                 <p className="text-right">~{data ? data.author : "Napoleon"}</p>
               </div>
             )}
