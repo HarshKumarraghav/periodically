@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
-import { usePeriodicTable } from "../context/userContext";
+import { TableData, usePeriodicTable } from "../context/userContext";
 import { MyDebounce } from "../utils/Debounce";
 import { colorMap } from "../utils/colorCode";
 import { SortHeader } from "../utils/SortData";
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
-  const [filterData, setFilterData] = useState("");
+  const [filterData, setFilterData] = useState<TableData>();
   const [sortingData, setSortingData] = useState("number");
   useEffect(() => {
     setFilterData(tableData);
@@ -49,12 +49,13 @@ const Header = () => {
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
-  const handleClose = (e) => {
-    if (e.target.id === "handle") {
+  const handleClose = (e: MouseEvent<HTMLAnchorElement>) => {
+    const target = e.target as HTMLAnchorElement;
+    if (target.id === "handle") {
       setActive(false);
     }
   };
-  const SetInputString = (value) => {
+  const SetInputString = (value: string) => {
     setSearchInput(value);
   };
   /* `const DebouncedSetInputString = MyDebounce(SetInputString, 3000);` is creating a debounced version
@@ -143,7 +144,7 @@ overwhelming the system with too many requests. */
             ))}
           </div>
           <div className="col-span-3 overflow-x-scroll scrollbar-hide">
-            {filterData
+            {(filterData ?? [])
               .filter((value) => {
                 if (searchInput === "") {
                   return value;
@@ -177,9 +178,7 @@ overwhelming the system with too many requests. */
                     <h1 className="text-sm font-bold" style={{ color: colorMap[item.category] }}>
                       {item.number}.{item.name}
                     </h1>
-                    <h1 Discovered className="text-[12px] italic">
-                      Discovered by:{item.discovered_by}
-                    </h1>
+                    <h1 className="text-[12px] italic">Discovered by:{item.discovered_by}</h1>
                   </div>
                   <div className="flex text-left justify-center flex-col w-30 h-full text-primary-white mr-5">
                     <h1 className="text-[11px] font-bold">Nature:{item.category.toUpperCase()}</h1>
