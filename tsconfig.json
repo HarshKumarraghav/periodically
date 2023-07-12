@@ -20,9 +20,13 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.tsx",
-    "pages/_app.js",
-    "context/userContext.js",
-    "context/userContext.js"
-, "components/Header.js"  ],
+    "pages/_app.ts",
+    "context/userContext.tsxx",
+    "context/userContext.tsxx",
+    "components/Header.js",
+    "utils/SortData.js",
+    "utils/Debounce.js",
+    "utils/Debounce.js"
+  ],
   "exclude": ["node_modules"]
 }
