@@ -3,6 +3,7 @@ import ProgressBar from "@badrap/bar-of-progress";
 import Router from "next/router";
 import { TableProvider } from "../context/userContext";
 
+// IMPORTANT: Needs to be changed to a proper types, but for now I have no idea which would be best ~TerroR75
 interface Props {
   Component: React.ComponentType<any>;
   pageProps: any;
