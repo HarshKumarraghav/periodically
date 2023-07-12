@@ -6,6 +6,8 @@ import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import { usePeriodicTable } from "../context/userContext";
 import { MyDebounce } from "../utils/Debounce";
+import { colorMap } from "../utils/colorCode";
+import { SortHeader } from "../utils/SortData";
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
@@ -14,20 +16,8 @@ const Header = () => {
   useEffect(() => {
     setFilterData(tableData);
   }, [tableData]);
-  const colorMap = {
-    "noble gas": "#3AB0FF",
-    "polyatomic nonmetal": "#F00699",
-    "alkaline earth metal": "#01708F",
-    "diatomic nonmetal": "#FF5F00",
-    "alkali metal": "#3E00FF",
-    "transition metal": "#BF1A2F",
-    "post-transition metal": "#890596",
-    lanthanide: "#7868E6",
-    actinide: "#FF8C32",
-    metalloid: "#3EC70B",
-  };
-  const [searchInput, setSearchInput] = useState("");
 
+  const [searchInput, setSearchInput] = useState("");
   const [active, setActive] = useState(false);
 
   // sorting  by name
@@ -150,36 +140,19 @@ overwhelming the system with too many requests. */
       {active && (
         <div className="hidden sticky col-span-3  mx-auto md:flex flex-col items-center h-[550px]">
           <div className="item-center m-4 flex">
-            <button
-              onClick={() => setSortingData("number")}
-              className={
-                sortingData === "number"
-                  ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                  : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-              }
-            >
-              Atomic Number
-            </button>
-            <button
-              onClick={() => setSortingData("name")}
-              className={
-                sortingData === "name"
-                  ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                  : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-              }
-            >
-              Name
-            </button>
-            <button
-              onClick={() => setSortingData("symbol")}
-              className={
-                sortingData === "symbol"
-                  ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                  : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-              }
-            >
-              Symbol
-            </button>
+            {SortHeader?.map((data) => (
+              <button
+                key={data.key + data.id}
+                onClick={() => setSortingData(data.key)}
+                className={
+                  sortingData === data.key
+                    ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
+                    : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
+                }
+              >
+                {data.title}
+              </button>
+            ))}
           </div>
           <div className="col-span-3 overflow-x-scroll scrollbar-hide">
             {filterData

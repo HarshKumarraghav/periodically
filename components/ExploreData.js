@@ -3,6 +3,7 @@ import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { ArrowBack, GitHub } from "@mui/icons-material";
 import { useRouter } from "next/router";
+import { SortExplore } from "../utils/SortData";
 const ExploreData = ({ filterData, tableData, setFilterData, handleClick }) => {
   const router = useRouter();
   const [sortingData, setSortingData] = useState("number");
@@ -111,56 +112,19 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }) => {
         <div className="w-full h-4"></div>
 
         <div className="item-center bg-primary p-3 flex">
-          <button
-            onClick={() => setSortingData("number")}
-            className={
-              sortingData === "number"
-                ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-            }
-          >
-            Atomic Number
-          </button>
-          <button
-            onClick={() => setSortingData("name")}
-            className={
-              sortingData === "name"
-                ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-            }
-          >
-            Name
-          </button>
-          <button
-            onClick={() => setSortingData("symbol")}
-            className={
-              sortingData === "symbol"
-                ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-            }
-          >
-            Symbol
-          </button>
-          <button
-            onClick={() => setSortingData("category")}
-            className={
-              sortingData === "category"
-                ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-            }
-          >
-            Category
-          </button>
-          <button
-            onClick={() => setSortingData("appearance")}
-            className={
-              sortingData === "appearance"
-                ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-                : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
-            }
-          >
-            Phase
-          </button>
+          {SortExplore?.map((data) => (
+            <button
+              key={data.key + data.id}
+              onClick={() => setSortingData(data.key)}
+              className={
+                sortingData === data.key
+                  ? "w-40 h-8 font-bold p-1 bg-primary-color rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
+                  : "w-40 h-8 font-bold p-1 rounded-md shadow-light-card text-[10px] font-custom active:scale-90 hover:scale-95 transition text-gray-300"
+              }
+            >
+              {data.title}
+            </button>
+          ))}
         </div>
         <div className="overflow-y-scroll bg-gray-900 mb-4 h-[335px] md:h-full overflow-hidden scrollbar-hide">
           {filterData.map((item) => (
