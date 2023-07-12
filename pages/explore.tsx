@@ -3,7 +3,7 @@ import ExploreData from "../components/ExploreData";
 import Header from "../components/Header";
 import Head from "next/head";
 import RandomInfo from "../components/RandomInfo";
-import { TableData, usePeriodicTable } from "../context/userContext";
+import { usePeriodicTable } from "../context/userContext";
 import Footer from "../components/Footer";
 import Element from "../interfaces/element";
 
@@ -24,7 +24,7 @@ const explore = () => {
     dataFetch();
   };
   const [tableData, randomData] = usePeriodicTable();
-  const [filterData, setFilterData] = useState<TableData>(tableData);
+  const [filterData, setFilterData] = useState<Element[]>(tableData);
   useEffect(() => {
     setFilterData(tableData);
   }, []);

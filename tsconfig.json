@@ -23,10 +23,10 @@
     "pages/_app.ts",
     "context/userContext.tsxx",
     "context/userContext.tsxx",
-    "components/Header.js",
-    "utils/SortData.js",
-    "utils/Debounce.js",
-    "utils/Debounce.js"
+    "components/Header.tsxx",
+    "utils/SortData.ts",
+    "utils/Debounce.ts",
+    "utils/Debounce.ts"
   ],
   "exclude": ["node_modules"]
 }

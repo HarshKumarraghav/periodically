@@ -4,14 +4,16 @@ import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
 import { useRouter } from "next/router";
-import { TableData, usePeriodicTable } from "../context/userContext";
+import { usePeriodicTable } from "../context/userContext";
 import { MyDebounce } from "../utils/Debounce";
 import { colorMap } from "../utils/colorCode";
 import { SortHeader } from "../utils/SortData";
+import Element from "../interfaces/element";
+
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
-  const [filterData, setFilterData] = useState<TableData>();
+  const [filterData, setFilterData] = useState<Element[]>([]);
   const [sortingData, setSortingData] = useState("number");
   useEffect(() => {
     setFilterData(tableData);

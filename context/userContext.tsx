@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import Element from "../interfaces/element";
 
-export type TableData = Element[];
-
-type TableContextValue = [TableData, boolean, React.Dispatch<React.SetStateAction<TableData>>];
+type TableContextValue = [Element[], boolean, React.Dispatch<React.SetStateAction<Element[]>>];
 
 const tableContext = createContext<TableContextValue | undefined>(undefined);
 
@@ -12,7 +10,7 @@ interface Props {
 }
 
 export const TableProvider = ({ children }: Props): JSX.Element => {
-  const [tableData, setTableData] = useState<TableData>([]);
+  const [tableData, setTableData] = useState<Element[]>([]);
   const [loadingTable, setLoadingTable] = useState<boolean>(true);
 
   const periodictableData = async (): Promise<void> => {
