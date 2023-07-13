@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { usePeriodicTable } from "../../context/userContext";
 import { color, motion } from "framer-motion";
 import { buttonDataMap, colorMap } from "../../utils/colorCode";
+import Element from "../../interfaces/element";
 
-const FilterbyCategory = ({
-  setFilterData,
-  activeCategory,
-  setActiveCategory,
-}) => {
+interface Props {
+  setFilterData: React.Dispatch<React.SetStateAction<Element[]>>;
+  activeCategory: string;
+  setActiveCategory: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const FilterbyCategory = ({ setFilterData, activeCategory, setActiveCategory }: Props) => {
   const [tableData] = usePeriodicTable();
   useEffect(() => {
     setFilterData(

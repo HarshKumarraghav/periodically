@@ -19,7 +19,7 @@ const explore = () => {
   useEffect(() => {
     dataFetch();
   }, []);
-  const handleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+  const handleClick = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     dataFetch();
   };
