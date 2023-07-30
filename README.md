@@ -6,19 +6,19 @@ We all remember the times when we used to struggle to remember the names, proper
 <img src="https://img.shields.io/badge/Author-@HarshKumarraghav-critical" />
 </p>
 
-![Periodically](public/Periodically-poster.gif)
+![Periodically-poster](https://github.com/HarshKumarraghav/periodically/assets/72187191/e94be0b1-2b1d-4c7a-b805-74fe71b6e966)
+
 
 ## ⚛️ Why a periodic table
 
-In the **Periodically** web application you will find a huge amount of data about chemical elements for free. You will learn a lot of new and are useful for yourself, no matter if you are a schoolboy, student, engineer, housewife, or a person of any other provisions that do not have a refresher in Chemistry.
+In the **Periodically** web application you will find a huge amount of data about chemical elements for free. You will learn a lot of new and be useful for yourself, no matter if you are a schoolboy, student, engineer, housewife, or a person of any other provision that does not have a refresher in Chemistry.
 
-The chemistry falls into to a number of the most important sciences and is one of the main school objects.
-Its studying begins with the Periodic Table. An interactive approach to a training material is more effective than a classical one. As in it
-technologies which became the family for the modern pupils are used.
+Chemistry falls into a number of the most important sciences and is one of the main school objects.
+Its studying begins with the Periodic Table. An interactive approach to training material is more effective than a classical one. As in it
+technologies that became the family for modern pupils are used.
 
 ## Periodically Demo
 
-![Video](public/periodically-demo.gif)
 
 ## 📌 Description
 
@@ -26,9 +26,9 @@ technologies which became the family for the modern pupils are used.
 form approved by the International Union of Pure and Applied Chemistry (IUPAC) as the core. Besides the Periodic Table of
 chemical elements, you can use the Table of solubility.
 
-The chemistry falls into to a number of the most important sciences and is one of the main school objects.
-Its studying begins with the Periodic Table. An interactive approach to a training material is more effective than a classical one. As in it
-technologies which became the family for the modern pupils are used.
+Chemistry falls into a number of the most important sciences and is one of the main school objects.
+Its studying begins with the Periodic Table. An interactive approach to training material is more effective than a classical one. As in it
+technologies that became the family for modern pupils are used.
 
 ## ✨ Features
 
@@ -55,12 +55,14 @@ technologies which became the family for the modern pupils are used.
 
 ## 🛠️ Design Architecture
 
-![Periodically](public/design_arc.png)
+![design_arc](https://github.com/HarshKumarraghav/periodically/assets/72187191/0456a72c-d1f5-4d7e-b484-c3d30d44528a)
+
 
 ## 🛠️ Periodically_golang_servers (API)
 
 A simple Golang API for **Periodic Table Elements** returns in JSON format.
 You can access the data by using this link:
+
 [Periodically](https://periodically-golang-server.herokuapp.com)
 
 ## 💡 Upcoming Feature
@@ -70,7 +72,7 @@ You can access the data by using this link:
 - Subscription-based data
 - payment system (stripe or Paytm)
 - Newsletter
-- Contact us page
+- Contact Us page
 
 ## Expected JSON Data Format
 
