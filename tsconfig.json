@@ -15,18 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "pages/index.tsx",
-    "pages/_app.ts",
-    "context/userContext.tsxx",
-    "context/userContext.tsxx",
-    "components/Header.tsxx",
-    "utils/SortData.ts",
-    "utils/Debounce.ts",
-    "utils/Debounce.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/index.tsx", "pages/_app.js", "components/Header.js"],
   "exclude": ["node_modules"]
 }

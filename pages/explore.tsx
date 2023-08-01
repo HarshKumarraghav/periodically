@@ -10,7 +10,6 @@ const explore = () => {
   const [data, setData] = useState<IElement[]>([]);
   const dataFetch = async () => {
     const response = await fetch("https://periodically-go-servers.onrender.com/random");
-    const response = await fetch("https://periodically-go-servers.onrender.com/random");
     const arr = [];
     const Data = await response.json();
     arr.push(Data);
