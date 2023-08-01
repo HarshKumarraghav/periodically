@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { ArrowBack, GitHub } from "@mui/icons-material";
@@ -17,6 +17,7 @@ type Props = {
 const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Props) => {
   const router = useRouter();
   const [sortingData, setSortingData] = useState("number");
+
   const colorMap: IColorMap = {
     "noble gas": "#3AB0FF",
     "polyatomic nonmetal": "#F00699",
@@ -35,6 +36,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
       setFilterData(tableData);
     } else if (sortingData === "name") {
       const sortedData = [...tableData].sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));
+      const sortedData = [...tableData].sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
@@ -44,6 +46,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
     if (sortingData === "") {
       setFilterData(tableData);
     } else if (sortingData === "symbol") {
+      const sortedData = [...tableData].sort((a, b) => (a.symbol.toLowerCase() < b.symbol.toLowerCase() ? -1 : 1));
       const sortedData = [...tableData].sort((a, b) => (a.symbol.toLowerCase() < b.symbol.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
@@ -55,6 +58,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
       setFilterData(tableData);
     } else if (sortingData === "number") {
       const sortedData = [...tableData].sort((a, b) => (a.number < b.number ? -1 : 1));
+      const sortedData = [...tableData].sort((a, b) => (a.number < b.number ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
@@ -64,6 +68,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
       setFilterData(tableData);
     } else if (sortingData === "category") {
       const sortedData = [...tableData].sort((a, b) => (a.category.toLowerCase() < b.category.toLowerCase() ? -1 : 1));
+      const sortedData = [...tableData].sort((a, b) => (a.category.toLowerCase() < b.category.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
@@ -72,6 +77,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
     if (sortingData === "") {
       setFilterData(tableData);
     } else if (sortingData === "appearance") {
+      const sortedData = [...tableData].sort((a, b) => (a.phase.toLowerCase() < b.phase.toLowerCase() ? -1 : 1));
       const sortedData = [...tableData].sort((a, b) => (a.phase.toLowerCase() < b.phase.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
@@ -97,10 +103,12 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
         <div className="w-full h-2"></div>
         <div className="text-primary-white p-4 rounded-md fond-custom">
           <h1 className="text-2xl text-primary-color ">Sort the element on the basis of: </h1>
+          <h1 className="text-2xl text-primary-color ">Sort the element on the basis of: </h1>
           <ul>
             <li>- Atomic Number</li>
             <li>- Name</li>
             <li>- Symbol</li>
+            <li>- Category(Alkali metal, Alkaline earth metal, Nobel gas ...)</li>
             <li>- Category(Alkali metal, Alkaline earth metal, Nobel gas ...)</li>
             <li>- Phase (Gas Liquid , Solid)</li>
           </ul>
@@ -143,13 +151,14 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
               </div>
               <div className="flex justify-center text-left flex-col w-30 h-full  text-primary-white">
                 <h1 className="text-sm font-bold" style={{ color: colorMap[item.category] }}>
+                <h1 className="text-sm font-bold" style={{ color: colorMap[item.category] }}>
                   {item.number}.{item.name}
                 </h1>
-                <h1 Discovered className="text-[12px] italic">
-                  Discovered by:{item.discovered_by}
-                </h1>
+                {/* custom "Discovered" attribute removed below (h1) - TypeScript threw an error */}
+                <h1 className="text-[12px] italic">Discovered by:{item.discovered_by}</h1>
               </div>
               <div className="flex text-left justify-center flex-col w-30 h-full text-primary-white mr-5">
+                <h1 className="text-[11px] font-bold">Nature:{item.category.toUpperCase()}</h1>
                 <h1 className="text-[11px] font-bold">Nature:{item.category.toUpperCase()}</h1>
                 <div className="flex p-1 gap-2 justify-center">
                   <div className="text-[12px]">
@@ -163,6 +172,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
                   <div className="text-[12px]">
                     <h2>Neutron</h2>
                     <p className="text-center">{Math.round(item.atomic_mass - item.number)}</p>
+                    <p className="text-center">{Math.round(item.atomic_mass - item.number)}</p>
                   </div>
                 </div>
               </div>
@@ -171,6 +181,7 @@ const ExploreData = ({ filterData, tableData, setFilterData, handleClick }: Prop
         </div>
         <div className="flex items-center justify-between flex-col mt-8">
           <div onClick={() => router.push("/periodictable")}>
+            <h1 className="text-primary-color text-xl md:text-md text-gara font-bold">Explore the random Element:</h1>
             <h1 className="text-primary-color text-xl md:text-md text-gara font-bold">Explore the random Element:</h1>
           </div>
 

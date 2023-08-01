@@ -146,7 +146,7 @@ overwhelming the system with too many requests. */
             ))}
           </div>
           <div className="col-span-3 overflow-x-scroll scrollbar-hide">
-            {filterData
+            {(filterData ?? [])
               .filter((value) => {
                 if (searchInput === "") {
                   return value;
@@ -180,9 +180,8 @@ overwhelming the system with too many requests. */
                     <h1 className="text-sm font-bold" style={{ color: colorMap[item.category] }}>
                       {item.number}.{item.name}
                     </h1>
-                    <h1 Discovered className="text-[12px] italic">
-                      Discovered by:{item.discovered_by}
-                    </h1>
+                    {/* custom "Discovered" attribute removed below (h1) - TypeScript threw an error */}
+                    <h1 className="text-[12px] italic">Discovered by:{item.discovered_by}</h1>
                   </div>
                   <div className="flex text-left justify-center flex-col w-30 h-full text-primary-white mr-5">
                     <h1 className="text-[11px] font-bold">Nature:{item.category.toUpperCase()}</h1>

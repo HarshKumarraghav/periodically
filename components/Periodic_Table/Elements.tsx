@@ -26,8 +26,8 @@ const Elements = () => {
             radius="20"
             color="#D82148"
             ariaLabel="three-dots-loading"
-            wrapperStyle
-            wrapperClass
+            wrapperStyle={{}}
+            wrapperClass=""
           />
           <p className="font-head text-2xl text-primary-color">Loading....</p>
         </div>
