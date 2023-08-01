@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEvent } from "react";
 import { SearchIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
@@ -8,10 +8,11 @@ import { usePeriodicTable } from "../context/userContext";
 import { MyDebounce } from "../utils/Debounce";
 import { colorMap } from "../utils/colorCode";
 import { SortHeader } from "../utils/SortData";
+import { IElement } from "../interfaces/IElement";
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
-  const [filterData, setFilterData] = useState("");
+  const [filterData, setFilterData] = useState<IElement[]>([]);
   const [sortingData, setSortingData] = useState("number");
   useEffect(() => {
     setFilterData(tableData);
@@ -25,9 +26,7 @@ const Header = () => {
     if (sortingData === "") {
       setFilterData(tableData);
     } else if (sortingData === "name") {
-      const sortedData = [...tableData].sort((a, b) =>
-        a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
-      );
+      const sortedData = [...tableData].sort((a, b) => (a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
@@ -37,9 +36,7 @@ const Header = () => {
     if (sortingData === "") {
       setFilterData(tableData);
     } else if (sortingData === "symbol") {
-      const sortedData = [...tableData].sort((a, b) =>
-        a.symbol.toLowerCase() < b.symbol.toLowerCase() ? -1 : 1
-      );
+      const sortedData = [...tableData].sort((a, b) => (a.symbol.toLowerCase() < b.symbol.toLowerCase() ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
@@ -49,18 +46,18 @@ const Header = () => {
     if (sortingData === "") {
       setFilterData(tableData);
     } else if (sortingData === "number") {
-      const sortedData = [...tableData].sort((a, b) =>
-        a.number < b.number ? -1 : 1
-      );
+      const sortedData = [...tableData].sort((a, b) => (a.number < b.number ? -1 : 1));
       setFilterData(sortedData);
     }
   }, [sortingData, tableData]);
-  const handleClose = (e) => {
-    if (e.target.id === "handle") {
+  const handleClose = (e: MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    if (target.id === "handle") {
+      console.log(target.id);
       setActive(false);
     }
   };
-  const SetInputString = (value) => {
+  const SetInputString = (value: string) => {
     setSearchInput(value);
   };
   /* `const DebouncedSetInputString = MyDebounce(SetInputString, 3000);` is creating a debounced version
@@ -120,15 +117,9 @@ overwhelming the system with too many requests. */
           onClick={() => router.push("/history")}
         >
           <HistoryEdu className="h-6 cursor-pointer text-primary-white" />
-          <button className=" hidden md:inline text-primary-white">
-            History
-          </button>
+          <button className=" hidden md:inline text-primary-white">History</button>
         </div>
-        <Link
-          href={
-            "https://github.com/HarshKumarraghav/periodically_golang_server"
-          }
-        >
+        <Link href={"https://github.com/HarshKumarraghav/periodically_golang_server"}>
           <a target="_blank">
             <div className=" flex items-center rounded-xl border-2 p-2 shadow-light-card active:scale-90 hover:scale-95">
               <GitHub className="h-6 cursor-pointer text-primary-white" />
@@ -161,12 +152,8 @@ overwhelming the system with too many requests. */
                   return value;
                 } else {
                   return (
-                    value.name
-                      .toLowerCase()
-                      .includes(searchInput.toLowerCase()) ||
-                    value.symbol
-                      .toLowerCase()
-                      .includes(searchInput.toLowerCase()) ||
+                    value.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+                    value.symbol.toLowerCase().includes(searchInput.toLowerCase()) ||
                     value.number.toString().includes(searchInput)
                   );
                 }
@@ -176,8 +163,7 @@ overwhelming the system with too many requests. */
                   className="flex w-[450px] bg-primary-light h-20 gap-2 shadow-light-card m-4 items-center justify-between rounded-md active:scale-90 hover:scale-95 transition "
                   key={item.number}
                   onClick={() => {
-                    router.push(`/elementdata/${item.number}`),
-                      setActive(false);
+                    router.push(`/elementdata/${item.number}`), setActive(false);
                   }}
                 >
                   <div className="w-20 h-full">
@@ -191,10 +177,7 @@ overwhelming the system with too many requests. */
                     </div>
                   </div>
                   <div className="flex justify-center text-left flex-col w-30 h-full mr-12 text-primary-white">
-                    <h1
-                      className="text-sm font-bold"
-                      style={{ color: colorMap[item.category] }}
-                    >
+                    <h1 className="text-sm font-bold" style={{ color: colorMap[item.category] }}>
                       {item.number}.{item.name}
                     </h1>
                     <h1 Discovered className="text-[12px] italic">
@@ -202,9 +185,7 @@ overwhelming the system with too many requests. */
                     </h1>
                   </div>
                   <div className="flex text-left justify-center flex-col w-30 h-full text-primary-white mr-5">
-                    <h1 className="text-[11px] font-bold">
-                      Nature:{item.category.toUpperCase()}
-                    </h1>
+                    <h1 className="text-[11px] font-bold">Nature:{item.category.toUpperCase()}</h1>
                     <div className="flex p-1 gap-2 justify-center">
                       <div className="text-[12px]">
                         <h2>Electron</h2>
@@ -216,9 +197,7 @@ overwhelming the system with too many requests. */
                       </div>
                       <div className="text-[12px]">
                         <h2>Neutron</h2>
-                        <p className="text-center">
-                          {Math.round(item.atomic_mass - item.number)}
-                        </p>
+                        <p className="text-center">{Math.round(item.atomic_mass - item.number)}</p>
                       </div>
                     </div>
                   </div>
