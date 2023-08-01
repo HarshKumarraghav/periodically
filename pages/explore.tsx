@@ -5,12 +5,11 @@ import Head from "next/head";
 import RandomInfo from "../components/RandomInfo";
 import { usePeriodicTable } from "../context/userContext";
 import Footer from "../components/Footer";
+import { IElement } from "../interfaces/IElement";
 const explore = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<IElement[]>([]);
   const dataFetch = async () => {
-    const response = await fetch(
-      "https://periodically-go-servers.onrender.com/random"
-    );
+    const response = await fetch("https://periodically-go-servers.onrender.com/random");
     const arr = [];
     const Data = await response.json();
     arr.push(Data);
@@ -19,7 +18,7 @@ const explore = () => {
   useEffect(() => {
     dataFetch();
   }, []);
-  const handleClick = (e) => {
+  const handleClick = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     dataFetch();
   };
