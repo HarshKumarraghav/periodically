@@ -18,6 +18,7 @@ export interface IElement {
   summary: string;
   symbol: string;
   ":": number;
+  xpos: number;
   ypos: number;
   shells: number[];
   electron_configuration: string;

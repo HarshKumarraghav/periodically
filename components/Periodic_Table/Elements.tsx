@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Classes from "./AtomElement.module.css";
 import { usePeriodicTable } from "../../context/userContext";
-import FilterbyCategory from "../../components/Periodic_Table/FilterbyCategory";
+import FilterbyCategory from "./FilterbyCategory";
 import Link from "next/link";
 import { Rings } from "react-loader-spinner";
 import { colorMap } from "../../utils/colorCode";
+import { IElement } from "../../interfaces/IElement";
 
 const Elements = () => {
-  const [tableData] = usePeriodicTable();
-  const [loadingTable] = usePeriodicTable();
-  const [filterData, setFilterData] = useState([]);
+  const [tableData, loadingTable] = usePeriodicTable();
+  const [filterData, setFilterData] = useState<IElement[]>([]);
   const [activeCategory, setActiveCategory] = useState("");
   useEffect(() => {
     setFilterData(tableData);
@@ -18,7 +18,7 @@ const Elements = () => {
 
   return (
     <>
-      {loadingTable == false ? (
+      {loadingTable == true ? (
         <div className="w-screen h-screen bg-primary flex items-center justify-center flex-col ">
           <Rings
             height="300"
@@ -41,26 +41,16 @@ const Elements = () => {
                 setActiveCategory={setActiveCategory}
               />
             </aside>
-            <div
-              className={Classes.periodictable}
-              style={{ position: "relative" }}
-            >
+            <div className={Classes.periodictable} style={{ position: "relative" }}>
               <AnimatePresence>
                 {filterData?.map((element, i) => (
-                  <Link
-                    href="/elementdata/[elementdata]"
-                    as={`/elementdata/${element.number}`}
-                    key={element.number}
-                  >
+                  <Link href="/elementdata/[elementdata]" as={`/elementdata/${element.number}`} key={element.number}>
                     <motion.div
                       className={Classes.element}
                       style={{
                         gridRow: element.ypos,
                         gridColumn: element.xpos,
-                        backgroundColor:
-                          activeCategory === ""
-                            ? colorMap[element.category]
-                            : element?.bgColor,
+                        backgroundColor: activeCategory === "" ? colorMap[element.category] : element?.bgColor,
                       }}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
@@ -75,10 +65,7 @@ const Elements = () => {
                 ))}
               </AnimatePresence>
             </div>
-            <div
-              className={Classes.periodictable}
-              style={{ position: "absolute", top: 12 }}
-            ></div>
+            <div className={Classes.periodictable} style={{ position: "absolute", top: 12 }}></div>
           </div>
         </div>
       )}

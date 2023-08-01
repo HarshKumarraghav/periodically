@@ -3,25 +3,24 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Head from "next/head";
 import Classes from "./AtomElement.module.css";
-import {
-  ArrowBack,
-  Book,
-  ContentPasteSearch,
-  Analytics,
-  Biotech,
-  ArrowForward,
-} from "@mui/icons-material";
+import { ArrowBack, Book, ContentPasteSearch, Analytics, Biotech, ArrowForward } from "@mui/icons-material";
 import Wiki from "../../assets/wikipedia.png";
 import notAvail from "../../assets/notAvail.jpeg";
 import Link from "next/link";
+import { IElement } from "../../interfaces/IElement";
+import IColorMap from "../../interfaces/IColorMap";
 
-const PeriodicDetail = ({ elementDataDetail }) => {
-  const [elementData, setElementData] = useState([]);
+type Props = {
+  elementDataDetail: IElement;
+};
+
+const PeriodicDetail = ({ elementDataDetail }: Props) => {
+  const [elementData, setElementData] = useState<IElement[]>([]);
   const router = useRouter();
   /* The above code is defining a JavaScript object called `colorMap` which maps different types of
  chemical elements to specific colors. Each chemical element type is represented as a key in the
  object, and its corresponding color is represented as the value associated with that key. */
-  const colorMap = {
+  const colorMap: IColorMap = {
     "noble gas": "#3AB0FF",
     "polyatomic nonmetal": "#F00699",
     "alkaline earth metal": "#01708F",
@@ -94,14 +93,10 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   ) : (
                     <div
                       className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                      onClick={() =>
-                        router.push(`/elementdata/${element.number - 1}`)
-                      }
+                      onClick={() => router.push(`/elementdata/${element.number - 1}`)}
                     >
                       <ArrowBack className="text-[20px]" />
-                      <h1 className="text-[15px]">
-                        Atomic Number-{element.number - 1}
-                      </h1>
+                      <h1 className="text-[15px]">Atomic Number-{element.number - 1}</h1>
                     </div>
                   )}
                   {element.number === 119 ? (
@@ -111,13 +106,9 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   ) : (
                     <div
                       className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                      onClick={() =>
-                        router.push(`/elementdata/${element.number + 1}`)
-                      }
+                      onClick={() => router.push(`/elementdata/${element.number + 1}`)}
                     >
-                      <h1 className="text-[15px]">
-                        Atomic Number-{element.number + 1}
-                      </h1>
+                      <h1 className="text-[15px]">Atomic Number-{element.number + 1}</h1>
                       <ArrowForward className="text-[20px]" />
                     </div>
                   )}
@@ -131,17 +122,9 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                     }}
                   >
                     <div className="flex items-center justify-between flex-col text-primary-white">
-                      <div
-                        className={`text-2xl absolute ${Classes.numberDetail}`}
-                      >
-                        {element.number}
-                      </div>
-                      <div className={`text-4xl ${Classes.symbolDetail}`}>
-                        {element.symbol}
-                      </div>
-                      <div className={`text-2xl  ${Classes.nameDetail}`}>
-                        {element.name}
-                      </div>
+                      <div className={`text-2xl absolute ${Classes.numberDetail}`}>{element.number}</div>
+                      <div className={`text-4xl ${Classes.symbolDetail}`}>{element.symbol}</div>
+                      <div className={`text-2xl  ${Classes.nameDetail}`}>{element.name}</div>
                     </div>
                   </div>
 
@@ -154,14 +137,10 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       ) : (
                         <div
                           className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                          onClick={() =>
-                            router.push(`/elementdata/${element.number - 1}`)
-                          }
+                          onClick={() => router.push(`/elementdata/${element.number - 1}`)}
                         >
                           <ArrowBack className="text-[15px]" />
-                          <h1 className="text-[10px]">
-                            Atomic Number-{element.number - 1}
-                          </h1>
+                          <h1 className="text-[10px]">Atomic Number-{element.number - 1}</h1>
                         </div>
                       )}
                       {element.number === 119 ? (
@@ -171,13 +150,9 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       ) : (
                         <div
                           className="flex w-full h-full bg-primary-light rounded-md mr-4 ml-2 border-2 shadow-light-card active:scale-90 transition justify-between item-center p-2  text-gara , text-primary-white"
-                          onClick={() =>
-                            router.push(`/elementdata/${element.number + 1}`)
-                          }
+                          onClick={() => router.push(`/elementdata/${element.number + 1}`)}
                         >
-                          <h1 className="text-[10px]">
-                            Atomic Number-{element.number + 1}
-                          </h1>
+                          <h1 className="text-[10px]">Atomic Number-{element.number + 1}</h1>
                           <ArrowForward className="text-[15px]" />
                         </div>
                       )}
@@ -189,27 +164,17 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       </h2>
                     </div>
                     <div className="flex text-[20px] flex-col mt-2 mr-4 ml-4">
-                      <h1
-                        className="text-[15px] font-gara"
-                        style={{ color: colorMap[element.category] }}
-                      >
+                      <h1 className="text-[15px] font-gara" style={{ color: colorMap[element.category] }}>
                         Atomic Number:
                       </h1>
-                      <h2 className="text-xl  text-primary-white mt-1 font-gara">
-                        {element.number}
-                      </h2>
+                      <h2 className="text-xl  text-primary-white mt-1 font-gara">{element.number}</h2>
                     </div>
                     <div className="mt-2 mr-4 ml-4 border-b border-primary-light"></div>
                     <div className="flex text-[20px] flex-col mt-2 mr-4 ml-4">
-                      <h1
-                        className="text-[15px] font-gara"
-                        style={{ color: colorMap[element.category] }}
-                      >
+                      <h1 className="text-[15px] font-gara" style={{ color: colorMap[element.category] }}>
                         Name:
                       </h1>
-                      <h2 className="text-2xl text-primary-white mt-1 font-gara">
-                        {element.name}
-                      </h2>
+                      <h2 className="text-2xl text-primary-white mt-1 font-gara">{element.name}</h2>
                     </div>
                     <div className="mt-2 border-b mr-4 ml-4 border-primary-light"></div>
                   </div>
@@ -218,23 +183,15 @@ const PeriodicDetail = ({ elementDataDetail }) => {
               <div className=" bg-primary">
                 <div className="mr-4 ml-4">
                   <div className="flex flex-col text-2xl">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Summary:
                     </h1>
-                    <h2 className="text-sm text-primary-white mt-1 font-custom">
-                      {element.summary}
-                    </h2>
+                    <h2 className="text-sm text-primary-white mt-1 font-custom">{element.summary}</h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
 
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Discovered By:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -244,10 +201,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   <div className="mt-2 border-b border-primary-light"></div>
 
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Named By:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -256,10 +210,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Appearance:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -268,15 +219,10 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Color:
                     </h1>
-                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.color || "Unknown"}
-                    </h2>
+                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">{element.color || "Unknown"}</h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex w-full bg-primary-light rounded-md shadow-light-card">
@@ -286,10 +232,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                     </h2>
                   </div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Atomic Mass:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -298,10 +241,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Density:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -310,23 +250,15 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  font-gara" style={{ color: colorMap[element.category] }}>
                       Phase
                     </h1>
-                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.phase || "Unknown"}
-                    </h2>
+                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">{element.phase || "Unknown"}</h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
 
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Electron Shells
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -345,9 +277,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       >
                         Electron
                       </h1>
-                      <p className="text-[18px] text-primary-white mt-1 font-custom">
-                        {element.number}
-                      </p>
+                      <p className="text-[18px] text-primary-white mt-1 font-custom">{element.number}</p>
                     </div>
                     <div className="flex flex-col">
                       <h1
@@ -356,9 +286,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       >
                         Protron
                       </h1>
-                      <p className="text-[18px] text-primary-white mt-1 font-custom">
-                        {element.number}
-                      </p>
+                      <p className="text-[18px] text-primary-white mt-1 font-custom">{element.number}</p>
                     </div>
                     <div className="flex flex-col">
                       <h1
@@ -380,56 +308,38 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                     </h2>
                   </div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Period:
                     </h1>
-                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.period || "Unknown"}
-                    </h2>
+                    <h2 className="text-[18px] text-primary-white mt-1 font-custom">{element.period || "Unknown"}</h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Melting Point
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
                       {Math.round(element.melt)}
-                      <span className="text-red-600">°K</span> ={" "}
-                      {Math.round(element.melt - 273.15)}
-                      <span className="text-green-600">°C</span> ={" "}
-                      {Math.round((element.melt - 273.15) * 1.8) + 32}
+                      <span className="text-red-600">°K</span> = {Math.round(element.melt - 273.15)}
+                      <span className="text-green-600">°C</span> = {Math.round((element.melt - 273.15) * 1.8) + 32}
                       <span className="text-blue-600">°F</span>
                     </h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Boiling Point
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
                       {Math.round(element.boil)}
-                      <span className="text-red-600">°K</span> =
-                      {Math.round(element.boil - 273.15)}
-                      <span className="text-green-600">°C</span> =
-                      {Math.round((element.boil - 273.15) * 1.8) + 32}
+                      <span className="text-red-600">°K</span> ={Math.round(element.boil - 273.15)}
+                      <span className="text-green-600">°C</span> ={Math.round((element.boil - 273.15) * 1.8) + 32}
                       <span className="text-blue-600">°F</span>
                     </h2>
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Molar Heat:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -438,18 +348,11 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light"></div>
                   <div className="flex flex-col justify-around shadow-light-card  md:mr-20 md:ml-20 bg-primary-light p-2 rounded-md text-2xl mt-2 text-center">
-                    <h1
-                      className="text-[15px] text-left font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px] text-left font-gara" style={{ color: colorMap[element.category] }}>
                       Spectrals Line:
                     </h1>
                     <div className=" w-full flex flex-col">
-                      <Image
-                        src={element.spectral_img || notAvail}
-                        width={"100%"}
-                        height={"100%"}
-                      />
+                      <Image src={element.spectral_img || notAvail} width={"100%"} height={"100%"} />
                     </div>
                   </div>
                   <div className="flex w-full bg-primary-light rounded-md shadow-light-card mt-2">
@@ -459,10 +362,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                     </h2>
                   </div>
                   <div className="flex flex-col text-2xl">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Electronic Configuration:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -471,10 +371,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light mb-4"></div>
                   <div className="flex flex-col text-2xl">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Electronic Configuration Semantic:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -483,10 +380,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light mb-4"></div>
                   <div className="flex flex-col text-2xl">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Electronic Affenity:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -495,10 +389,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light mb-4"></div>
                   <div className="flex flex-col text-2xl">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Electronegativity Paulingy:
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
@@ -507,10 +398,7 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                   </div>
                   <div className="mt-2 border-b border-primary-light mb-4"></div>
                   <div className="flex flex-col text-2xl mt-2">
-                    <h1
-                      className="text-[15px]  text-gray-400 font-gara"
-                      style={{ color: colorMap[element.category] }}
-                    >
+                    <h1 className="text-[15px]  text-gray-400 font-gara" style={{ color: colorMap[element.category] }}>
                       Ionization Energies
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
