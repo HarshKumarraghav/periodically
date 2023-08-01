@@ -50,7 +50,7 @@ const Elements = () => {
                       style={{
                         gridRow: element.ypos,
                         gridColumn: element.xpos,
-                        backgroundColor: activeCategory === "" ? colorMap[element.category] : element?.bgColor,
+                        backgroundColor: activeCategory === "" ? colorMap[element.category] : (element as any)?.bgColor,
                       }}
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
