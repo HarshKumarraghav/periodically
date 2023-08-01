@@ -9,10 +9,10 @@ import Link from "next/link";
 import { IElement } from "../interfaces/IElement";
 import IColorMap from "../interfaces/IColorMap";
 
-interface Props {
+type Props = {
   elementData: IElement[];
   handleClick?: () => void;
-}
+};
 
 const RandomInfo = ({ elementData, handleClick }: Props) => {
   const [elementDataDetail, setElementDataDetail] = useState<IElement[]>([]);
