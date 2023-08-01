@@ -23,7 +23,7 @@ const explore = () => {
     dataFetch();
   };
   const [tableData, randomData] = usePeriodicTable();
-  const [filterData, setFilterData] = useState([]);
+  const [filterData, setFilterData] = useState<IElement[]>([]);
   useEffect(() => {
     setFilterData(tableData);
   }, []);

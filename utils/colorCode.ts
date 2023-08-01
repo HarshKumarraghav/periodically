@@ -1,4 +1,6 @@
-export const colorMap = {
+import IColorMap from "../interfaces/IColorMap";
+
+export const colorMap: IColorMap = {
   "noble gas": "#3AB0FF",
   "polyatomic nonmetal": "#F00699",
   "alkaline earth metal": "#01708F",
