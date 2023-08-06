@@ -35,7 +35,7 @@ const RandomInfo = ({ elementData, handleClick }) => {
   return (
     <>
       {elementDataDetail.map((element) => (
-        <div>
+        <div key={element?.id}>
           {/* header seaction */}
           <div className="w-full bg-primary flex justify-center items-center">
             <div className=" md:w-3/4 mb-8 flex flex-col bg-primary-light p-4 rounded-xl mt-2">
