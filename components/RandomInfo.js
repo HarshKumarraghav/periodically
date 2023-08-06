@@ -35,7 +35,7 @@ const RandomInfo = ({ elementData, handleClick }) => {
   return (
     <>
       {elementDataDetail.map((element) => (
-        <div key={element?.id}>
+        <div key={element?.number}>
           {/* header seaction */}
           <div className="w-full bg-primary flex justify-center items-center">
             <div className=" md:w-3/4 mb-8 flex flex-col bg-primary-light p-4 rounded-xl mt-2">
@@ -284,8 +284,8 @@ const RandomInfo = ({ elementData, handleClick }) => {
                       Electron Shells
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.shells.map((data) => (
-                        <span>{`${data}, `}</span>
+                      {element.shells.map((data, i) => (
+                        <span key={i}>{`${data}, `}</span>
                       ))}
                     </h2>
                   </div>
@@ -468,8 +468,8 @@ const RandomInfo = ({ elementData, handleClick }) => {
                       Ionization Energies
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.ionization_energies.map((data) => (
-                        <span>{`${data}, `}</span>
+                      {element.ionization_energies.map((data, i) => (
+                        <span key={i}>{`${data}, `}</span>
                       ))}
                     </h2>
                   </div>

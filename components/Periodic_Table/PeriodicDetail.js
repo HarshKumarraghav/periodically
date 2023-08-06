@@ -330,8 +330,8 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       Electron Shells
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.shells.map((data) => (
-                        <span>{`${data}, `}</span>
+                      {element.shells.map((data, i) => (
+                        <span key={i}>{`${data}, `}</span>
                       ))}
                     </h2>
                   </div>
@@ -514,8 +514,8 @@ const PeriodicDetail = ({ elementDataDetail }) => {
                       Ionization Energies
                     </h1>
                     <h2 className="text-[18px] text-primary-white mt-1 font-custom">
-                      {element.ionization_energies.map((data) => (
-                        <span>{`${data}, `}</span>
+                      {element?.ionization_energies?.map((data, i) => (
+                        <span key={i}>{`${data}, `}</span>
                       ))}
                     </h2>
                   </div>
