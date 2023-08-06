@@ -9,9 +9,9 @@ const Home = () => {
   const randomQuote = async () => {
     await fetch("https://api.quotable.io/random", { method: "GET" })
       .then((res) => res.json())
-      .then((data) => setData(data),)
+      .then((data) => setData(data))
       .catch((err) => console.log(err));
-      setLoading(false)
+    setLoading(false);
   };
   useEffect(() => {
     randomQuote();
@@ -38,20 +38,22 @@ const Home = () => {
             </p>
           </div>
           <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md flex justify-center item-center">
-            {loading ?  (
+            {loading ? (
               <ReactLoading
                 type={"bars"}
                 color={"D82148"}
                 height={35}
                 width={35}
               />
-            )  : (
+            ) : (
               <div className="mt-2">
-                <h2 className="font-gara text-primary-color text-2xl">
-                  Thought of the moment
-                </h2>
-                <p className="italic text-xl">"{data.content}"</p>
-                <p className="text-right">~{data.author}</p>
+                <p className="italic text-xl">
+                  `
+                  {data.content ||
+                    "An expert is a man who has made all the mistakes, which can be made, in a very narrow field."}
+                  `
+                </p>
+                <p className="text-right">~{data.author || "A L Mackay"}</p>
               </div>
             )}
           </div>

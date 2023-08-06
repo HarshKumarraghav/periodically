@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        head: ["Abril Fatface", "cursive"],
+        head: ["Handjet", "cursive"],
         gara: ["Cormorant Garamond", "serif"],
-        custom: ["Montserrat", "sans-serif"],
+        custom: ["Poppins", "sans-serif"],
       },
       colors: {
         primary: "#222831",
