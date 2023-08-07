@@ -2,23 +2,8 @@ import React from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import PeriodicDetail from "../../components/Periodic_Table/PeriodicDetail";
-export async function getServerSideProps(context) {
-  const { elementdata } = context.query;
-  const response = await fetch(
-    `https://periodically-go-servers.onrender.com/number/${elementdata}`,
-    {
-      method: "GET",
-    }
-  );
-  const data = await response.json();
-  return {
-    props: {
-      elementdata,
-      elementDataDetail: data,
-    },
-  };
-}
-const elementdata = ({ elementDataDetail }) => {
+
+const ElementDataPage = ({ elementDataDetail }) => {
   return (
     <div>
       <Header />
@@ -28,4 +13,37 @@ const elementdata = ({ elementDataDetail }) => {
   );
 };
 
-export default elementdata;
+export async function getServerSideProps(context) {
+  try {
+    const { elementdata } = context.query;
+    const response = await fetch(
+      `https://periodically-go-servers.onrender.com/number/${elementdata}`,
+      {
+        method: "GET",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    const data = await response.json();
+
+    return {
+      props: {
+        elementDataDetail: data,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+
+    return {
+      props: {
+        elementDataDetail: null,
+        error: "Error fetching data",
+      },
+    };
+  }
+}
+
+export default ElementDataPage;
