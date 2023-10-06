@@ -27,7 +27,7 @@ const Home = () => {
         <link rel="icon" href="/periodically_favicon.png" />
       </Head>
       <div className="relative w-screen h-screen text-primary-white bg-primary">
-        <div className="w-full h-screen flex flex-col items-center justify-center">
+        <div className="w-full h-screen flex flex-col items-center justify-center px-10">
           <div>
             <h2 className="font-head text-primary-color text-4xl font-bold text-center p-2 rounded-xl ">
               Periodically
@@ -37,7 +37,7 @@ const Home = () => {
               elements."
             </p>
           </div>
-          <div className="mt-8 w-80 md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md flex justify-center item-center">
+          <div className="mt-8 w-full md:w-[600px] bg-primary-light shadow-light-card p-4 rounded-md flex justify-center item-center">
             {loading ? (
               <ReactLoading
                 type={"bars"}
