@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { SearchIcon } from "@heroicons/react/solid";
+import { SearchIcon, XCircleIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import Classes from "../components/Periodic_Table/AtomElement.module.css";
 import { GitHub, HistoryEdu, Explore } from "@mui/icons-material";
@@ -8,6 +8,8 @@ import { usePeriodicTable } from "../context/userContext";
 import { MyDebounce } from "../utils/Debounce";
 import { colorMap } from "../utils/colorCode";
 import { SortHeader } from "../utils/SortData";
+
+
 const Header = () => {
   const router = useRouter();
   const [tableData] = usePeriodicTable();
@@ -19,6 +21,8 @@ const Header = () => {
 
   const [searchInput, setSearchInput] = useState("");
   const [active, setActive] = useState(false);
+
+  console.log(active);
 
   // sorting  by name
   useEffect(() => {
@@ -69,6 +73,9 @@ of the `SetInputString` function using the `MyDebounce` utility function. This m
 executing the `SetInputString` function. This is useful for handling user input in real-time without
 overwhelming the system with too many requests. */
   const DebouncedSetInputString = MyDebounce(SetInputString, 300);
+
+
+
   return (
     <header
       className="sticky top-0 z-50 grid grid-cols-3 bg-primary p-5 shadow-light-card md:px-10"
@@ -84,21 +91,35 @@ overwhelming the system with too many requests. */
           Periodically
         </h2>
       </div>
+
+
+
       {/*  middle div - search*/}
       <div
         className="hidden md:hidden lg:flex items-center rounded-xl py-2 text-sm text-primary-white placeholder-primary-white lg:border-2 lg:shadow-light-card "
-        onClick={() => setActive(true)}
+        
       >
         <input
+        onClick={() => setActive(true)}
           onChange={(e) => {
             DebouncedSetInputString(e.target.value);
           }}
           type="text"
           placeholder={"Search your element by name || symbol || number"}
-          className=" flex-grow bg-transparent pl-5 outline-none text-primary-white"
+          className=" flex-grow bg-transparent pl-5 outline-none text-primary-white p-2 h-8"
         />
-        <SearchIcon className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />
+        {!active ? (
+          <SearchIcon onClick={() => setActive(true)} className="hidden h-8 cursor-pointer rounded-full bg-primary-color p-2 text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />) : (
+            <XCircleIcon onClick={() => setActive(false)} className="hidden h-8 p-[2px] cursor-pointer rounded-full text-white md:mx-2 md:inline-flex active:scale-90 hover:scale-95" />
+          )
+        }
       </div>
+
+
+
+
+
+
       <div
         className="lg:hidden flex items-center md:w-40 justify-between bg-primary-color rounded-xl border-2 p-2  shadow-light-card active:scale-90 hover:scale-95"
         onClick={() => router.push("/explore")}
@@ -106,11 +127,20 @@ overwhelming the system with too many requests. */
         <button className="md:inline text-primary-white">Explore</button>
         <Explore className="h-6 cursor-pointer text-primary-white" />
       </div>
+
+
+
       {/* right div */}
       <div className="flex items-center justify-end space-x-4 text-gray-500 ">
         <div
           className="hidden md:hidden lg:flex items-center justify-around  bg-primary-color rounded-xl lg:border-2 lg:p-2  ml-4 shadow-light-card active:scale-90 hover:scale-95"
-          onClick={() => router.push("/explore")}
+          onClick={() => {
+            router.push("/explore");
+
+            //change 1: when we are clicking explore the search bar isnt closing so i put setactive to false
+            setActive(false)
+
+          }}
         >
           <button className=" md:inline text-primary-white">Explore</button>
           <Explore className="h-6 cursor-pointer text-primary-white" />
@@ -137,9 +167,12 @@ overwhelming the system with too many requests. */
           </a>
         </Link>
       </div>
+
+
+
       {active && (
         <div className="hidden sticky col-span-3  mx-auto md:flex flex-col items-center h-[550px]">
-          <div className="item-center m-4 flex">
+          <div className="item-center m-4 flex flex-row ">
             {SortHeader?.map((data) => (
               <button
                 key={data.key + data.id}
@@ -154,6 +187,8 @@ overwhelming the system with too many requests. */
               </button>
             ))}
           </div>
+
+
           <div className="col-span-3 overflow-x-scroll scrollbar-hide">
             {filterData
               .filter((value) => {
@@ -226,6 +261,8 @@ overwhelming the system with too many requests. */
               ))}
           </div>
         </div>
+
+
       )}
     </header>
   );
